@@ -23,8 +23,8 @@ void BattleShip::setShips(unsigned short numberOfShips)
     shipsLeftOnBoard = numberOfShips;
     while (ships < numberOfShips)
     {
-        int x = rand() % rows_lines_;
-        int y = rand() % rows_lines_;
+        int x = rand() % rows_lines_ - 1;
+        int y = rand() % rows_lines_ - 1;
         if (board[x][y] != 1)
         {
             ships++;
