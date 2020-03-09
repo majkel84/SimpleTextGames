@@ -1,12 +1,14 @@
 #include <iostream>
-#include <BattleShip.hpp>
+#include "BattleShip.hpp"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!" << endl;
-    //BattleShip bs;
+    BattleShip bs;
+    bs.createEmptyBoard(5);
+    bs.setShips(5);
+    bs.fire(1,2);
 
     return 0;
 }
