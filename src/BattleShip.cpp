@@ -20,6 +20,7 @@ void BattleShip::showBoard()
 void BattleShip::setShips(unsigned short numberOfShips)
 {
     int ships = 0;
+    shipsLeftOnBoard = numberOfShips;
     while (ships < numberOfShips)
     {
         int x = rand() % rows_lines_;
@@ -37,13 +38,17 @@ bool BattleShip::fire(int x, int y)
     if (board[x][y] == 1)
     {
         board[x][y] = 2;
+        shipsLeftOnBoard--;
         return true;
     }
     cout << "MISS" << endl;
     return false;
 }
 
-//int numberOfShipsLeft();
+int BattleShip::getShipsLeftOnBoard()
+{
+    return shipsLeftOnBoard;
+}
 
 BattleShip::~BattleShip()
 {

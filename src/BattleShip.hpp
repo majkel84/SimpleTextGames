@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <iostream>
 #include <ctime>
@@ -12,10 +12,11 @@ public:
     void showBoard();
     void setShips(unsigned short numberOfShips);
     bool fire(int x, int y);
-    int numberOfShipsLeft();
+    int getShipsLeftOnBoard();
     ~BattleShip();
 
 private:
     int rows_lines_;
     int** board = new int*[rows_lines_];
+    int shipsLeftOnBoard;
 };
