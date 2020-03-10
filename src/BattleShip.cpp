@@ -1,6 +1,8 @@
 #include "BattleShip.hpp"
 
-void BattleShip::createEmptyBoard(int rows_lines)
+BattleShip::BattleShip();
+
+/*void BattleShip::createEmptyBoard(int rows_lines)
 {
     for(int i = 0; i < rows_lines; ++i)
         board[i] = new int[rows_lines];
@@ -48,13 +50,13 @@ bool BattleShip::fire(int x, int y)
 int BattleShip::getShipsLeftOnBoard()
 {
     return shipsLeftOnBoard;
-}
+}*/
 
 BattleShip::~BattleShip()
 {
-    for(int i = 0; i < rows_lines_; ++i)
+    /*for(int i = 0; i < rows_lines_; ++i)
     {
         delete [] board[i];
     }
-    delete [] board;
+    delete [] board;*/
 }
