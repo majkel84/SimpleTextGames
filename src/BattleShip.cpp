@@ -1,10 +1,10 @@
 #include "BattleShip.hpp"
 
-BattleShip::BattleShip(unsigned short size)
+BattleShip::BattleShip(unsigned short boardSize)
 {
-    rows_lines_ = size;
+    rows_lines_ = boardSize;
     for(int i = 0; i < size; ++i)
-        board[i] = new int[size];
+        board[i] = new int[boardSize];
 }
 
 /*void BattleShip::showBoard()
