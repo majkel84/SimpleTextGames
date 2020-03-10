@@ -8,10 +8,10 @@ using namespace std;
 class BattleShip
 {
 public:
-    BattleShip(unsigned short boardSize);
+    BattleShip();
     void showBoard();
     void setShips(unsigned short numberOfShips);
-    //bool fire(int x, int y);
+    bool fire(int x, int y);
     int getShipsLeftOnBoard();
     ~BattleShip();
 

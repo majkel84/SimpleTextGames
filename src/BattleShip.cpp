@@ -1,10 +1,9 @@
 #include "BattleShip.hpp"
 
-BattleShip::BattleShip(unsigned short boardSize)
+BattleShip::BattleShip()
 {
-    rows_lines_ = boardSize;
-    for(int i = 0; i < boardSize; ++i)
-        board[i] = new int[boardSize];
+    for(int i = 0; i < rows_lines_; ++i)
+        board[i] = new int[rows_lines_];
 }
 
 void BattleShip::showBoard()
@@ -34,17 +33,21 @@ void BattleShip::setShips(unsigned short numberOfShips)
     }
 }
 
-/*bool BattleShip::fire(int x, int y)
+bool BattleShip::fire(int x, int y)
 {
+    if (x >= rows_lines_ || y >= rows_lines_)
+        return false;
     if (board[x][y] == 1)
     {
         board[x][y] = 2;
         shipsLeftOnBoard--;
+        cout << "Got It" << endl;
+        showBoard();
         return true;
     }
     cout << "MISS" << endl;
     return false;
-}*/
+}
 
 int BattleShip::getShipsLeftOnBoard()
 {
