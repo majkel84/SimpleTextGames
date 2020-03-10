@@ -1,6 +1,6 @@
 #include "BattleShip.hpp"
 
-BattleShip::BattleShip();
+BattleShip::BattleShip() {}
 
 /*void BattleShip::createEmptyBoard(int rows_lines)
 {
