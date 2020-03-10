@@ -10,13 +10,13 @@ class BattleShip
 public:
     BattleShip(unsigned short boardSize);
     void showBoard();
-    //void setShips(unsigned short numberOfShips);
+    void setShips(unsigned short numberOfShips);
     //bool fire(int x, int y);
-    //int getShipsLeftOnBoard();
+    int getShipsLeftOnBoard();
     ~BattleShip();
 
 private:
-    int rows_lines_ = 5;
+    unsigned short rows_lines_ = 5;
     int** board = new int*[rows_lines_];
-    int shipsLeftOnBoard;
+    unsigned short shipsLeftOnBoard;
 };

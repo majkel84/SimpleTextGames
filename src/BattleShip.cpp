@@ -18,14 +18,14 @@ void BattleShip::showBoard()
         }
 }
 
-/*void BattleShip::setShips(unsigned short numberOfShips)
+void BattleShip::setShips(unsigned short numberOfShips)
 {
     int ships = 0;
     shipsLeftOnBoard = numberOfShips;
     while (ships < numberOfShips)
     {
-        int x = rand() % rows_lines_ - 1;
-        int y = rand() % rows_lines_ - 1;
+        int x = rand() % (rows_lines_ - 1);
+        int y = rand() % (rows_lines_ - 1);
         if (board[x][y] != 1)
         {
             ships++;
@@ -34,7 +34,7 @@ void BattleShip::showBoard()
     }
 }
 
-bool BattleShip::fire(int x, int y)
+/*bool BattleShip::fire(int x, int y)
 {
     if (board[x][y] == 1)
     {
@@ -44,12 +44,12 @@ bool BattleShip::fire(int x, int y)
     }
     cout << "MISS" << endl;
     return false;
-}
+}*/
 
 int BattleShip::getShipsLeftOnBoard()
 {
     return shipsLeftOnBoard;
-}*/
+}
 
 BattleShip::~BattleShip()
 {
