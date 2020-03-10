@@ -3,7 +3,7 @@
 BattleShip::BattleShip(unsigned short boardSize)
 {
     rows_lines_ = boardSize;
-    for(int i = 0; i < size; ++i)
+    for(int i = 0; i < boardSize; ++i)
         board[i] = new int[boardSize];
 }
 
