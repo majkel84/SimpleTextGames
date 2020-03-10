@@ -1,6 +1,9 @@
 #include "BattleShip.hpp"
 
-BattleShip::BattleShip() {}
+BattleShip::BattleShip(unsigned short size)
+{
+    rows_lines_ = size;
+}
 
 /*void BattleShip::createEmptyBoard(int rows_lines)
 {
