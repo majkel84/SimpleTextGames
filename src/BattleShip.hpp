@@ -9,7 +9,6 @@ class BattleShip
 {
 public:
     BattleShip(unsigned short boardSize);
-    //void createEmptyBoard(int rows_lines);
     //void showBoard();
     //void setShips(unsigned short numberOfShips);
     //bool fire(int x, int y);
@@ -18,6 +17,6 @@ public:
 
 private:
     int rows_lines_;
-    //int** board = new int*[rows_lines_];
+    int** board = new int*[rows_lines_];
     int shipsLeftOnBoard;
 };
