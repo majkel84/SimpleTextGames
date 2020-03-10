@@ -8,7 +8,7 @@ using namespace std;
 class BattleShip
 {
 public:
-    BattleShip();
+    BattleShip(unsigned short boardSize);
     //void createEmptyBoard(int rows_lines);
     //void showBoard();
     //void setShips(unsigned short numberOfShips);
