@@ -7,7 +7,7 @@ BattleShip::BattleShip(unsigned short boardSize)
         board[i] = new int[boardSize];
 }
 
-/*void BattleShip::showBoard()
+void BattleShip::showBoard()
 {
     if (rows_lines_ != 0)
         for (int rows = 0; rows < rows_lines_; rows++)
@@ -17,7 +17,8 @@ BattleShip::BattleShip(unsigned short boardSize)
                 cout << board[rows][lines] << " ";
         }
 }
-void BattleShip::setShips(unsigned short numberOfShips)
+
+/*void BattleShip::setShips(unsigned short numberOfShips)
 {
     int ships = 0;
     shipsLeftOnBoard = numberOfShips;

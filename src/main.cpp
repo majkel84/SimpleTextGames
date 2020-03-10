@@ -3,8 +3,7 @@
 int main()
 {
     BattleShip bs(5);
-    //bs.createEmptyBoard(5);
-    //bs.showBoard();
+    bs.showBoard();
     //bs.setShips(5);
     //bs.fire(1,2);
 
