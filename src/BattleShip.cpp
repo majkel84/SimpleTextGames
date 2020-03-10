@@ -52,7 +52,7 @@ int BattleShip::getShipsLeftOnBoard()
 
 BattleShip::~BattleShip()
 {
-    for(int i = 0; i < rows_lines_; ++i)
+    for(int i = 0; i < rows_lines_; i++)
         delete [] board[i];
     delete [] board;
 }
