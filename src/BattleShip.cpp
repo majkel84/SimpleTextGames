@@ -3,8 +3,8 @@
 BattleShip::BattleShip(unsigned short size)
 {
     rows_lines_ = size;
-    for(int i = 0; i < rows_lines; ++i)
-        board[i] = new int[rows_lines];
+    for(int i = 0; i < size; ++i)
+        board[i] = new int[size];
 }
 
 /*void BattleShip::showBoard()
