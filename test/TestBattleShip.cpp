@@ -1,12 +1,12 @@
 #include <gtest/gtest.h>
 #include "BattleShip.hpp"
 
-struct TestArrays : public ::testing::Test
+struct TestBattleShip : public ::testing::Test
 {
     BattleShip bs;
 };
 
-TEST_F(TestArrays, checkRotationByThree)
+TEST_F(TestBattleShip, checkWronFire)
 {
     bs.setShips(5);
     ASSERT_FALSE(bs.fire(0,0));
