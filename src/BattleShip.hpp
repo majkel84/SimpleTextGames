@@ -9,7 +9,9 @@ class BattleShip
 {
 public:
     BattleShip();
+    int** createBoard(int boardSize);
     void showBoard();
+    //void showBoard2(int** b);
     void setShips(unsigned short numberOfShips);
     bool fire(int x, int y);
     int getShipsLeftOnBoard();
@@ -17,6 +19,6 @@ public:
 
 private:
     unsigned short rows_lines_ = 5;
-    int** board = new int*[rows_lines_];
+    int** board_ = new int*[rows_lines_];
     unsigned short shipsLeftOnBoard;
 };
