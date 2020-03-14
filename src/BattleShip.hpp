@@ -11,7 +11,7 @@ public:
     BattleShip();
     int** createBoard(int boardSize);
     void showBoard();
-    //void showBoard2(int** b);
+    void showBoard(int** b);
     void setShips(unsigned short numberOfShips);
     bool fire(int x, int y);
     int getShipsLeftOnBoard();

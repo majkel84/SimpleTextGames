@@ -11,6 +11,8 @@ int** BattleShip::createBoard(int boardSize)
     int** board = new int*[boardSize];
     for(int i = 0; i < boardSize; ++i)
         board[i] = new int[boardSize];
+    board_ = board;
+    rows_lines_ = boardSize;
     return board;
 }
 
@@ -25,12 +27,15 @@ void BattleShip::showBoard()
         }
 }
 
-/*void BattleShip::showBoard2(int **b)
+void BattleShip::showBoard(int **b)
 {
-    for(int i = 0; i < sizeof(b)/sizeof(b[0]); i++)
-        for (int j = 0; j <  sizeof(b)/sizeof(b[0]); j++)
+    for(int i = 0; i < rows_lines_; i++)
+    {
+        for (int j = 0; j <  rows_lines_; j++)
             cout << b[i][j] << " ";
-}*/
+        cout << endl;
+    }
+}
 
 void BattleShip::setShips(unsigned short numberOfShips)
 {
