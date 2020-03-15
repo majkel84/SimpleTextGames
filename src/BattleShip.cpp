@@ -6,14 +6,14 @@ BattleShip::BattleShip()
         board_[i] = new int[rows_lines_];
 }
 
-int** BattleShip::createBoard(int boardSize)
+BattleShip::BattleShip(const unsigned short rows_lines,
+           const unsigned short numberOfShips)
+    : rows_lines_(rows_lines),
+      numberOfShips_(numberOfShips)
 {
-    int** board = new int*[boardSize];
-    for(int i = 0; i < boardSize; ++i)
-        board[i] = new int[boardSize];
-    board_ = board;
-    rows_lines_ = boardSize;
-    return board;
+    for(int i = 0; i < rows_lines_; ++i)
+        board_[i] = new int[rows_lines_];
+    BattleShip::setShips(numberOfShips_);
 }
 
 void BattleShip::showBoard()

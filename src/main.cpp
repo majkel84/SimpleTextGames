@@ -2,12 +2,11 @@
 
 int main()
 {
-    BattleShip bs;
-    bs.showBoard(bs.createBoard(5));
-    bs.setShips(5);
+    BattleShip bs(5, 5);
     bs.fire(1,2);
     bs.fire(5,2);
     bs.fire(2,3);
+    bs.~BattleShip();
 
     return 0;
 }
