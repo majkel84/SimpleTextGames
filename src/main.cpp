@@ -6,7 +6,6 @@ int main()
     bs.fire(1,2);
     bs.fire(5,2);
     bs.fire(2,3);
-    bs.~BattleShip();
 
     return 0;
 }
