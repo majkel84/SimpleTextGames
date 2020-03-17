@@ -62,7 +62,7 @@ bool BattleShip::fire(int x, int y)
         board_[x][y] = 2;
         shipsLeftOnBoard--;
         cout << "Got It" << endl;
-        showBoard();
+        showBoard(board_);
         return true;
     }
     cout << "MISS" << endl;
