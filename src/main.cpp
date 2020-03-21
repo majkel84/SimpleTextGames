@@ -1,11 +1,10 @@
 #include "BattleShip.hpp"
+#include "OX.hpp"
 
 int main()
 {
-    BattleShip bs(5, 5);
-    bs.fire(1,2);
-    bs.fire(5,2);
-    bs.fire(2,3);
+    OX ox;
+    ox.showBoard();
 
     return 0;
 }
