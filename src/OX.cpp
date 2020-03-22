@@ -9,3 +9,18 @@ void OX::showBoard()
         cout << endl;
     }
 }
+
+void OX::chooseField()
+{
+    int row, line;
+    cout << "Choose Your field (1st - row): ";
+    cin >> row;
+    cout << "2nd - line: ";
+    cin >> line;
+    gameBoard[row][line] = player;
+}
+
+void OX::chooseField(int row, int line)
+{
+    gameBoard[row][line] = player;
+}
