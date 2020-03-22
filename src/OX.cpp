@@ -10,6 +10,11 @@ void OX::showBoard()
     }
 }
 
+char OX::getBoardField(int row, int line)
+{
+    return gameBoard[row][line];
+}
+
 void OX::chooseField()
 {
     int row, line;
