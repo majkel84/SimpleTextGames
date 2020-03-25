@@ -29,3 +29,16 @@ void OX::chooseField(int row, int line)
 {
     gameBoard[row][line] = player;
 }
+
+void OX::changePlayer()
+{
+    if (player == 'X')
+        player = 'O';
+    if (player == 'O')
+        player = 'X';
+}
+
+char OX::getActuallPlayer()
+{
+    return player;
+}
