@@ -23,18 +23,20 @@ void OX::chooseField()
     cout << "2nd - line: ";
     cin >> line;
     gameBoard[row][line] = player;
+    OX::changePlayer();
 }
 
 void OX::chooseField(int row, int line)
 {
     gameBoard[row][line] = player;
+    OX::changePlayer();
 }
 
 void OX::changePlayer()
 {
     if (player == 'X')
         player = 'O';
-    if (player == 'O')
+    else if (player == 'O')
         player = 'X';
 }
 
