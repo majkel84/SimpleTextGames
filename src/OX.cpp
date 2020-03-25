@@ -1,5 +1,15 @@
 #include "OX.hpp"
 
+void OX::initializeBoard()
+{
+    for (auto rows = 0; rows < 3; rows++)
+    {
+        for (auto lines = 0; lines < 3; lines++)
+            gameBoard[rows][lines] = '*';
+        cout << endl;
+    }
+}
+
 void OX::showBoard()
 {
     for (auto rows = 0; rows < 3; rows++)
