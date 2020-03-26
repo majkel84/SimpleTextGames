@@ -7,9 +7,8 @@ struct TestOX : public ::testing::Test
     OX ox;
 };
 
-TEST_F(TestOX, checkInitializeBoard)
+TEST_F(TestOX, checkConstructor)
 {
-    ox.initializeBoard();
     char testValue = ox.getBoardField(1,1);
     EXPECT_EQ((char)testValue, 42);
 }

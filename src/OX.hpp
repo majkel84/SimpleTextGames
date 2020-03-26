@@ -8,7 +8,7 @@ using namespace std;
 class OX
 {
 public:
-    void initializeBoard();
+    OX();
     void showBoard();
     void chooseField();
     void chooseField(int row, int line);
@@ -16,8 +16,7 @@ public:
     void changePlayer();
     char getActuallPlayer();
 private:
-    BoardField boardField;
     char gameBoard[3][3];/* =
     {'1', '2', '3', '4', '5', '6', '7', '8', '9'};*/
-    char player = 'X';
+    char player;
 };

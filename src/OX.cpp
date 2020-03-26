@@ -1,13 +1,11 @@
 #include "OX.hpp"
 
-void OX::initializeBoard()
+OX::OX()
 {
+    player = (char)BoardField::X;
     for (auto rows = 0; rows < 3; rows++)
-    {
         for (auto lines = 0; lines < 3; lines++)
-            gameBoard[rows][lines] = '*';
-        cout << endl;
-    }
+            gameBoard[rows][lines] = (char)BoardField::UNKNOWN;
 }
 
 void OX::showBoard()
@@ -45,9 +43,9 @@ void OX::chooseField(int row, int line)
 void OX::changePlayer()
 {
     if (player == 'X')
-        player = 'O';
+        player = (char)BoardField::O;
     else if (player == 'O')
-        player = 'X';
+        player = (char)BoardField::X;
 }
 
 char OX::getActuallPlayer()
