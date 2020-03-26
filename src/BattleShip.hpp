@@ -3,6 +3,8 @@
 #include <iostream>
 #include <ctime>
 
+#include <GameField.hpp>
+
 using namespace std;
 
 class BattleShip

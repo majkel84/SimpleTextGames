@@ -15,8 +15,9 @@ public:
     char getBoardField(int row, int line);
     void changePlayer();
     char getActuallPlayer();
+    char checkWinner();
 private:
-    char gameBoard[3][3];/* =
-    {'1', '2', '3', '4', '5', '6', '7', '8', '9'};*/
+    char gameBoard[3][3];
     char player;
+    int numberOfShots = 0;
 };
