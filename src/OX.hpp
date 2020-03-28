@@ -16,9 +16,8 @@ public:
     void changePlayer();
     void chooseField();
     void chooseField(int row, int line);
-    //char checkWinner();
+    char checkWinner();
 private:
-    //char gameBoard[3][3];
     vector<vector<char>> gameBoard;
     char player;
     int numberOfShots = 0;
