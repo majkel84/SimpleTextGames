@@ -4,24 +4,34 @@ OX::OX()
 {
     player = (char)BoardField::X;
     for (auto rows = 0; rows < 3; rows++)
+    {
+        vector<char> row;
         for (auto lines = 0; lines < 3; lines++)
-            gameBoard[rows][lines] = (char)BoardField::UNKNOWN;
+            row.push_back((char)BoardField::UNKNOWN);
+        gameBoard.push_back(row);
+    }
 }
 
 void OX::showBoard()
 {
-    for (auto rows = 0; rows < 3; rows++)
+    for (auto& row: gameBoard)
     {
-        for (auto lines = 0; lines < 3; lines++)
-            cout << gameBoard[rows][lines] << " ";
-        cout << endl;
+        for (auto& column: row)
+            cout << column << " ";
+    cout << endl;
     }
+}
+
+char OX::getActuallPlayer()
+{
+    return player;
 }
 
 char OX::getBoardField(int row, int line)
 {
     return gameBoard[row][line];
 }
+/*
 
 void OX::chooseField()
 {
@@ -54,11 +64,6 @@ void OX::changePlayer()
         player = (char)BoardField::X;
 }
 
-char OX::getActuallPlayer()
-{
-    return player;
-}
-
 char OX::checkWinner()
 {
     // any of the rows is same
@@ -78,4 +83,4 @@ char OX::checkWinner()
     if(gameBoard[0][2]==gameBoard[1][1] && gameBoard[1][1]==gameBoard[2][0] && gameBoard [0][2]!=0)
          return gameBoard[0][2];
     return (char)BoardField::UNKNOWN;
-}
+}*/
