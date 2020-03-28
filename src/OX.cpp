@@ -31,7 +31,14 @@ char OX::getBoardField(int row, int line)
 {
     return gameBoard[row][line];
 }
-/*
+
+void OX::changePlayer()
+{
+    if (player == 'X')
+        player = (char)BoardField::O;
+    else if (player == 'O')
+        player = (char)BoardField::X;
+}
 
 void OX::chooseField()
 {
@@ -42,8 +49,8 @@ void OX::chooseField()
     cin >> line;
     gameBoard[row][line] = player;
     numberOfShots++;
-    if (numberOfShots >=5)
-        checkWinner();
+    /*if (numberOfShots >=5)
+        checkWinner();*/
     OX::changePlayer();
 }
 
@@ -51,19 +58,11 @@ void OX::chooseField(int row, int line)
 {
     gameBoard[row][line] = player;
     numberOfShots++;
-    if (numberOfShots >=5)
-        checkWinner();
+    /*if (numberOfShots >=5)
+        checkWinner();*/
     OX::changePlayer();
 }
-
-void OX::changePlayer()
-{
-    if (player == 'X')
-        player = (char)BoardField::O;
-    else if (player == 'O')
-        player = (char)BoardField::X;
-}
-
+/*
 char OX::checkWinner()
 {
     // any of the rows is same

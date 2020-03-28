@@ -13,9 +13,9 @@ public:
     void showBoard();
     char getBoardField(int row, int line);
     char getActuallPlayer();
-    //void chooseField();
-    //void chooseField(int row, int line);
-    //void changePlayer();
+    void changePlayer();
+    void chooseField();
+    void chooseField(int row, int line);
     //char checkWinner();
 private:
     //char gameBoard[3][3];
