@@ -50,7 +50,8 @@ void OX::chooseField()
     gameBoard[row][line] = player;
     numberOfShots++;
     if (numberOfShots >=5)
-        checkWinner();
+        if (checkWinner())
+            cout << "Player " << checkWinner() << " won" << endl;
     OX::changePlayer();
 }
 
@@ -59,7 +60,8 @@ void OX::chooseField(int row, int line)
     gameBoard[row][line] = player;
     numberOfShots++;
     if (numberOfShots >=5)
-        checkWinner();
+        if (checkWinner())
+            cout << "Player " << player << " won" << endl;
     OX::changePlayer();
 }
 
@@ -81,5 +83,5 @@ char OX::checkWinner()
     // 2nd diagonal is same
     if(gameBoard[0][2]==gameBoard[1][1] && gameBoard[1][1]==gameBoard[2][0] && gameBoard [0][2]!=0)
          return gameBoard[0][2];
-    return (char)BoardField::UNKNOWN;
+    return 0;
 }
