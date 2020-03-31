@@ -16,7 +16,9 @@ public:
     void changePlayer();
     void chooseField();
     void chooseField(int row, int line);
+    void selectField(int row, int line, char field);
     char checkWinner();
+
 private:
     vector<vector<char>> gameBoard;
     char player;
