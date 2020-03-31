@@ -47,22 +47,7 @@ void OX::chooseField()
     cin >> row;
     cout << "2nd - line: ";
     cin >> line;
-    try
-    {
-        if (row > 2)
-            throw row;
-        if (line > 2)
-            throw line;
-        gameBoard[row][line] = player;
-        numberOfShots++;
-        if (numberOfShots >=5)
-            if (checkWinner())
-                cout << "Player " << checkWinner() << " won" << endl;
-        OX::changePlayer();
-    } catch (int e)
-    {
-        cout << "Value " << e << " higher than game board size";
-    }
+    OX::chooseField(row, line);
 }
 
 void OX::chooseField(int row, int line)
