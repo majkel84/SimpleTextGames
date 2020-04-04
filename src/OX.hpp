@@ -3,10 +3,11 @@
 #include <iostream>
 #include <vector>
 #include <GameField.hpp>
+#include <GameBoard.hpp>
 
 using namespace std;
 
-class OX
+class OX : public GameBoard
 {
 public:
     OX();
