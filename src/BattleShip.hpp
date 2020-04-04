@@ -16,7 +16,7 @@ public:
     void showBoard();
     void showBoard(int** b);
     void setShips(unsigned short numberOfShips);
-    bool fire(int x, int y);
+    bool chooseField(int x, int y);
     int getShipsLeftOnBoard();
     ~BattleShip();
 

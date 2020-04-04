@@ -43,6 +43,8 @@ set(CMAKE_CXX_FLAGS "-g -O0 --coverage")
 
 set(SRC_LIST
     src/GameField.hpp
+    src/GameBoard.hpp
+    src/GameBoard.cpp
     src/BattleShip.hpp
     src/BattleShip.cpp
     src/OX.hpp

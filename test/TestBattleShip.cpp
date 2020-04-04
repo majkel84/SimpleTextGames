@@ -9,7 +9,7 @@ struct TestBattleShip : public ::testing::Test
 TEST_F(TestBattleShip, checkWrongShot)
 {
     bs.setShips(5);
-    ASSERT_FALSE(bs.fire(0,0));
+    ASSERT_FALSE(bs.chooseField(0,0));
 }
 
 TEST_F(TestBattleShip, checkShipsLeft)

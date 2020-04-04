@@ -53,7 +53,7 @@ void BattleShip::setShips(unsigned short numberOfShips)
     }
 }
 
-bool BattleShip::fire(int x, int y)
+bool BattleShip::chooseField(int x, int y)
 {
     if (x >= rows_lines_ || y >= rows_lines_)
         return false;
