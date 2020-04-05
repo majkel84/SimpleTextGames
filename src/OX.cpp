@@ -15,11 +15,6 @@ char OX::getActuallPlayer()
     return player;
 }
 
-char OX::getBoardField(int row, int line)
-{
-    return gameBoard[row][line];
-}
-
 void OX::changePlayer()
 {
     if (player == 'X')

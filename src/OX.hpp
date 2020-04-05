@@ -12,7 +12,6 @@ class OX : public GameBoard
 public:
     OX(int numberOfFields);
     void showBoard();
-    char getBoardField(int row, int line);
     char getActuallPlayer();
     void changePlayer();
     void chooseField();
