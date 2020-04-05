@@ -1,6 +1,6 @@
 #include "GameBoard.hpp"
 
-/*GameBoard::GameBoard(int numberOfFields)
+GameBoard::GameBoard(int numberOfFields)
 {
     for (auto rows = 0; rows < numberOfFields; rows++)
     {
@@ -9,7 +9,7 @@
             row.push_back((char)BoardField::UNKNOWN);
         gameBoard.push_back(row);
     }
-}*/
+}
 
 char GameBoard::getBoardField(int row,int line)
 {
@@ -18,6 +18,12 @@ char GameBoard::getBoardField(int row,int line)
 
 void GameBoard::showBoard()
 {
+    for (auto& row: gameBoard)
+    {
+        for (auto& column: row)
+            cout << column << " ";
+    cout << endl;
+    }
 }
 
 void GameBoard::chooseField()

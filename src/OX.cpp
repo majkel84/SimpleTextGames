@@ -1,25 +1,20 @@
 #include "OX.hpp"
 
-OX::OX()
+OX::OX(int numberOfFields) : GameBoard(numberOfFields)
 {
-    player = (char)BoardField::X;
-    for (auto rows = 0; rows < 3; rows++)
+    for (auto rows = 0; rows < numberOfFields; rows++)
     {
         vector<char> row;
-        for (auto lines = 0; lines < 3; lines++)
+        for (auto lines = 0; lines < numberOfFields; lines++)
             row.push_back((char)BoardField::UNKNOWN);
         gameBoard.push_back(row);
     }
+    player = (char)BoardField::X;
 }
 
 void OX::showBoard()
 {
-    for (auto& row: gameBoard)
-    {
-        for (auto& column: row)
-            cout << column << " ";
-    cout << endl;
-    }
+    GameBoard::showBoard();
 }
 
 char OX::getActuallPlayer()

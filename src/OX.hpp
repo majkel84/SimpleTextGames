@@ -10,7 +10,7 @@ using namespace std;
 class OX : public GameBoard
 {
 public:
-    OX();
+    OX(int numberOfFields);
     void showBoard();
     char getBoardField(int row, int line);
     char getActuallPlayer();
@@ -21,7 +21,7 @@ public:
     char checkWinner();
 
 private:
-    vector<vector<char>> gameBoard;
+    //vector<vector<char>> gameBoard;
     char player;
     int numberOfShots = 0;
 };

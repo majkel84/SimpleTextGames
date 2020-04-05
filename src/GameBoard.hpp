@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <iostream>
 #include <GameField.hpp>
 
 using namespace std;
@@ -8,7 +9,7 @@ using namespace std;
 class GameBoard
 {
 public:
-    //GameBoard(int numberOfFields);
+    GameBoard(int numberOfFields);
     char getBoardField(int row,int line);
     void showBoard();
     void chooseField();
