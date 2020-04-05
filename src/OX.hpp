@@ -21,7 +21,6 @@ public:
     char checkWinner();
 
 private:
-    //vector<vector<char>> gameBoard;
     char player;
     int numberOfShots = 0;
 };
