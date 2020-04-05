@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <string>
+#include "GameBoard.hpp"
 #include "OX.hpp"
 
 struct TestOX : public ::testing::Test

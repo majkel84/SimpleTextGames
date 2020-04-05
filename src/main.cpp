@@ -3,7 +3,7 @@
 
 int main()
 {
-    OX ox;
+    OX ox(3);
     ox.chooseField(0,0);
     ox.chooseField(1,1);
     //ox.chooseField(1,1);
