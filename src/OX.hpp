@@ -13,6 +13,7 @@ public:
     OX(int numberOfFields);
     void showBoard();
     char getActuallPlayer();
+    char getBoardField(int row, int line);
     void changePlayer();
     void chooseField();
     void chooseField(int row, int line);

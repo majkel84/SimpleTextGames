@@ -5,6 +5,11 @@ OX::OX(int numberOfFields) : GameBoard(numberOfFields)
     player = (char)BoardField::X;
 }
 
+char OX::getBoardField(int row, int line)
+{
+    return GameBoard::getBoardField(row, line);
+}
+
 void OX::showBoard()
 {
     GameBoard::showBoard();
@@ -37,9 +42,9 @@ void OX::chooseField(int row, int line)
 {
     try
     {
-        if (row > 2)
+        if (row > gameBoard.size())
             throw row;
-        if (line > 2)
+        if (line > gameBoard.size())
             throw line;
         OX::selectField(row, line, player);
     } catch (int e)
