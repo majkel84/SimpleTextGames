@@ -4,25 +4,21 @@
 #include <ctime>
 
 #include <GameField.hpp>
+#include <GameBoard.hpp>
 
 using namespace std;
 
-class BattleShip
+class BattleShip : GameBoard
 {
 public:
-    BattleShip();
-    BattleShip(const unsigned short rows_lines,
-               const unsigned short numberOfShips);
+    BattleShip(int numberOfFields);
     void showBoard();
     void showBoard(int** b);
     void setShips(unsigned short numberOfShips);
     bool chooseField(int x, int y);
     int getShipsLeftOnBoard();
-    ~BattleShip();
 
 private:
-    unsigned short rows_lines_;
-    int** board_ = new int*[rows_lines_];
     unsigned short shipsLeftOnBoard;
     unsigned short numberOfShips_;
 };
