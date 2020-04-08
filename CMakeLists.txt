@@ -49,6 +49,8 @@ set(SRC_LIST
     src/BattleShip.cpp
     src/OX.hpp
     src/OX.cpp
+    src/Snake.hpp
+    src/Snake.cpp
     )
 
 include_directories(src)
