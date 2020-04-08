@@ -33,7 +33,7 @@ void Snake::input()
 
 void Snake::show()
 {
-    cout << "\033[2J\033[1;1H";
+    system("clear");
 }
 
 void Snake::logic()

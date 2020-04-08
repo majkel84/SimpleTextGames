@@ -10,4 +10,5 @@ enum class BoardField : char
     UNKNOWN = '*',
     SNAKEHEAD = '0',
     SNAKEBODY = 'o',
+    WALL = '#'
 };
