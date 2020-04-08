@@ -5,7 +5,13 @@
 
 using namespace std;
 
-class Snake : public GameBoard
+class Snake
 {
+    void logic();
+    void setup();
+    void input();
+    void show();
 
-}
+private:
+    bool gameOver = false;
+};
