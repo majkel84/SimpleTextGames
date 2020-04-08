@@ -20,6 +20,6 @@ private:
     const unsigned short height = 20;
     unsigned short snakeX, snakeY;
     unsigned short fruitX,fruitY;
-    enum enumDirection {STOP, LEFT, RIGHT, UP, DOWN};
+    enum enumDirection {STOP = 0, LEFT, RIGHT, UP, DOWN};
     enumDirection direction = STOP;
 };
