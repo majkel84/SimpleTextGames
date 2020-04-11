@@ -41,7 +41,7 @@ void Snake::show()
 
 void Snake::drawHorizontalBorder()
 {
-    for (auto i = 0; i < width; i++)
+    for (auto i = 0; i < width + 1; i++)
         cout << (char)BoardField::WALL;
     cout << endl;
 }
@@ -50,10 +50,14 @@ void Snake::drawVerticalBorder()
 {
     for (auto h = 0; h < height - 1; h++)
     {
-        for (auto w = 0; w < width; w++)
+        for (auto w = 0; w < width + 1; w++)
         {
-            if (w == 0 || w == width - 1)
+            if (w == 0 || w == width)
                 cout << (char)BoardField::WALL;
+            else if (h == snakeX && w == snakeY)
+                cout << (char)BoardField::SNAKEHEAD;
+            else if (h == fruitX && w == fruitY)
+                cout << (char)BoardField::UNKNOWN;
             else
                 cout << (char)BoardField::BLANK;
         }
