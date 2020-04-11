@@ -41,6 +41,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_FLAGS "-g -O0 --coverage")
 
+find_package(Curses REQUIRED)
+include_directories(${CURSES_INCLUDE_DIR})
+
 set(SRC_LIST
     src/GameField.hpp
     src/GameBoard.hpp

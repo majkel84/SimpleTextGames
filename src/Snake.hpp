@@ -2,6 +2,7 @@
 
 #include <GameField.hpp>
 #include <GameBoard.hpp>
+#include <curses.h>
 
 using namespace std;
 
