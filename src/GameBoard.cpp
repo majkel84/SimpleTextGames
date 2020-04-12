@@ -1,5 +1,7 @@
 #include "GameBoard.hpp"
 
+GameBoard::GameBoard() {}
+
 GameBoard::GameBoard(int numberOfFields)
 {
     for (auto rows = 0; rows < numberOfFields; rows++)

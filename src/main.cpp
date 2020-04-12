@@ -5,9 +5,7 @@
 int main()
 {
     Snake s;
-    s.putFruitOnBoard();
-    s.setStartPosition();
-    s.show();
+    s.drawBoard();
 
     return 0;
 }

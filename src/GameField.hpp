@@ -10,7 +10,7 @@ enum class BoardField : char
     SNAKEHEADNORTH = '^',
     SNAKEHEADSOUTH = 'V',
     SNAKEBODY = 'o',
-    WALL = '#',
+    SNAKEBOARD = '.',
     BLANK = ' '
 };
 

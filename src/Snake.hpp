@@ -6,17 +6,15 @@
 
 using namespace std;
 
-class Snake
+class Snake : public GameBoard
 {
 public:
+    Snake();
     void setup();
     void setStartPosition();
     void putFruitOnBoard();
-    void input();
-    void show();
-    void drawHorizontalBorder();
-    void drawVerticalBorder();
-    void logic();
+    void drawBoard();
+    void clearBoard();
 
 private:
     bool gameOver = false;

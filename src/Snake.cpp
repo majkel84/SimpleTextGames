@@ -1,14 +1,16 @@
 #include <Snake.hpp>
 
-void Snake::setup()
+Snake::Snake() : GameBoard()
 {
     Snake::setStartPosition();
     Snake::putFruitOnBoard();
+}
+
+void Snake::setup()
+{
     while(!gameOver)
     {
-        Snake::input();
-        Snake::show();
-        Snake::logic();
+        Snake::drawBoard();
     }
 }
 
@@ -26,47 +28,22 @@ void Snake::putFruitOnBoard()
             Snake::putFruitOnBoard();
 }
 
-void Snake::input()
+void Snake::drawBoard()
 {
-
+    Snake::clearBoard();
+    Snake::showBoard();
 }
 
-void Snake::show()
+void Snake::clearBoard()
 {
     cout << "\033[2J\033[1;1H";
-    Snake::drawHorizontalBorder();
-    Snake::drawVerticalBorder();
-    Snake::drawHorizontalBorder();
-}
-
-void Snake::drawHorizontalBorder()
-{
-    for (auto i = 0; i < width + 1; i++)
-        cout << (char)BoardField::WALL;
-    cout << endl;
-}
-
-void Snake::drawVerticalBorder()
-{
-    for (auto h = 0; h < height - 1; h++)
+    for (auto rows = 0; rows < width; rows++)
     {
-        for (auto w = 0; w < width + 1; w++)
-        {
-            if (w == 0 || w == width)
-                cout << (char)BoardField::WALL;
-            else if (h == snakePosition.first && w == snakePosition.second)
-                cout << (char)BoardField::SNAKEHEADWEST;
-            else if (h == fruitPosition.first && w == fruitPosition.second)
-                cout << (char)BoardField::UNKNOWN;
-            else
-                cout << (char)BoardField::BLANK;
-        }
-        cout << endl;
+        vector<char> row;
+        for (auto lines = 0; lines < height; lines++)
+            row.push_back((char)BoardField::SNAKEBOARD);
+        gameBoard.push_back(row);
     }
-}
-
-void Snake::logic()
-{
 
 }
 
