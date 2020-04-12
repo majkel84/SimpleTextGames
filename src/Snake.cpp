@@ -2,6 +2,7 @@
 
 Snake::Snake(int numberOfFields, char boardDefaultField) : GameBoard(numberOfFields, boardDefaultField)
 {
+    boardSize = numberOfFields;
     Snake::setStartPosition();
     Snake::putFruitOnBoard();
 }
@@ -22,10 +23,13 @@ void Snake::setStartPosition()
 
 void Snake::putFruitOnBoard()
 {
+    if (!snakeFoodEaten)
+    {
         fruitPosition.first = rand() % boardSize;
         fruitPosition.second = rand() % boardSize;
         if (gameBoard[fruitPosition.first][fruitPosition.second] != (char)BoardField::SNAKEBOARD)
             Snake::putFruitOnBoard();
+    }
 }
 
 void Snake::drawBoard()
@@ -45,8 +49,11 @@ void Snake::clearBoard()
             row.push_back((char)BoardField::SNAKEBOARD);
         //gameBoard.push_back(row);
     }
-
 }
 
+void Snake::updateScore()
+{
+    score = snakeLength;
+}
 
 
