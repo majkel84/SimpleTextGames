@@ -31,18 +31,19 @@ void Snake::putFruitOnBoard()
 void Snake::drawBoard()
 {
     Snake::clearBoard();
-    Snake::showBoard();
+    GameBoard::showBoard();
 }
 
 void Snake::clearBoard()
 {
+    vector<char> row;
     cout << "\033[2J\033[1;1H";
     for (auto rows = 0; rows < boardSize; rows++)
     {
-        vector<char> row;
+        row.clear();
         for (auto lines = 0; lines < boardSize; lines++)
             row.push_back((char)BoardField::SNAKEBOARD);
-        gameBoard.push_back(row);
+        //gameBoard.push_back(row);
     }
 
 }
