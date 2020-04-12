@@ -55,7 +55,7 @@ void Snake::drawVerticalBorder()
             if (w == 0 || w == width)
                 cout << (char)BoardField::WALL;
             else if (h == snakePosition.first && w == snakePosition.second)
-                cout << (char)BoardField::SNAKEHEAD;
+                cout << (char)BoardField::SNAKEHEADWEST;
             else if (h == fruitPosition.first && w == fruitPosition.second)
                 cout << (char)BoardField::UNKNOWN;
             else
