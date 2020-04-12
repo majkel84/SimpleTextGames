@@ -11,6 +11,7 @@ class GameBoard
 public:
     GameBoard();
     GameBoard(int numberOfFields);
+    GameBoard(int numberOfFields, char boardDefaultField);
     char getBoardField(int row,int line);
     void showBoard();
     void chooseField();

@@ -1,7 +1,5 @@
 #include "GameBoard.hpp"
 
-GameBoard::GameBoard() {}
-
 GameBoard::GameBoard(int numberOfFields)
 {
     for (auto rows = 0; rows < numberOfFields; rows++)
@@ -9,6 +7,17 @@ GameBoard::GameBoard(int numberOfFields)
         vector<char> row;
         for (auto lines = 0; lines < numberOfFields; lines++)
             row.push_back((char)BoardField::UNKNOWN);
+        gameBoard.push_back(row);
+    }
+}
+
+GameBoard::GameBoard(int numberOfFields, char boardDefaultField)
+{
+    for (auto rows = 0; rows < numberOfFields; rows++)
+    {
+        vector<char> row;
+        for (auto lines = 0; lines < numberOfFields; lines++)
+            row.push_back(boardDefaultField);
         gameBoard.push_back(row);
     }
 }

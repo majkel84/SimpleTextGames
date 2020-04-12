@@ -9,7 +9,7 @@ using namespace std;
 class Snake : public GameBoard
 {
 public:
-    Snake();
+    Snake(int numberOfFields, char boardDefaultField);
     void setup();
     void setStartPosition();
     void putFruitOnBoard();
@@ -18,8 +18,7 @@ public:
 
 private:
     bool gameOver = false;
-    const unsigned short width = 5;
-    const unsigned short height = 5;
+    const unsigned short boardSize = 5;
     pair <unsigned short, unsigned short> snakePosition;
     pair <unsigned short, unsigned short> fruitPosition;
     enum enumDirection {STOP = 0, LEFT, RIGHT, UP, DOWN};
