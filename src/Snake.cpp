@@ -24,7 +24,7 @@ void Snake::putFruitOnBoard()
 {
         fruitPosition.first = rand() % boardSize;
         fruitPosition.second = rand() % boardSize;
-        if (fruitPosition.first == snakePosition.first && fruitPosition.second == snakePosition.second)
+        if (gameBoard[fruitPosition.first][fruitPosition.second] != (char)BoardField::SNAKEBOARD)
             Snake::putFruitOnBoard();
 }
 
