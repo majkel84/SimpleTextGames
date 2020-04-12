@@ -14,15 +14,15 @@ void Snake::setup()
 
 void Snake::setStartPosition()
 {
-    snakeX = width / 2;
-    snakeY = height / 2;
+    snakePosition.first = width / 2;
+    snakePosition.second = height / 2;
 }
 
 void Snake::putFruitOnBoard()
 {
-        fruitX = rand() % width;
-        fruitY = rand() % height;
-        if (fruitX == snakeX && fruitY == snakeY)
+        fruitPosition.first = rand() % width;
+        fruitPosition.second = rand() % height;
+        if (fruitPosition.first == snakePosition.first && fruitPosition.second == snakePosition.second)
             Snake::putFruitOnBoard();
 }
 
@@ -54,16 +54,15 @@ void Snake::drawVerticalBorder()
         {
             if (w == 0 || w == width)
                 cout << (char)BoardField::WALL;
-            else if (h == snakeX && w == snakeY)
+            else if (h == snakePosition.first && w == snakePosition.second)
                 cout << (char)BoardField::SNAKEHEAD;
-            else if (h == fruitX && w == fruitY)
+            else if (h == fruitPosition.first && w == fruitPosition.second)
                 cout << (char)BoardField::UNKNOWN;
             else
                 cout << (char)BoardField::BLANK;
         }
         cout << endl;
     }
-
 }
 
 void Snake::logic()

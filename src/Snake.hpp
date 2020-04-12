@@ -22,8 +22,8 @@ private:
     bool gameOver = false;
     const unsigned short width = 5;
     const unsigned short height = 5;
-    unsigned short snakeX, snakeY;
-    unsigned short fruitX,fruitY;
+    pair <unsigned short, unsigned short> snakePosition;
+    pair <unsigned short, unsigned short> fruitPosition;
     enum enumDirection {STOP = 0, LEFT, RIGHT, UP, DOWN};
     enumDirection direction = STOP;
     unsigned short score = 0;
