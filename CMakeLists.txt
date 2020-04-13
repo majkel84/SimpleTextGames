@@ -46,6 +46,8 @@ include_directories(${CURSES_INCLUDE_DIR})
 
 set(SRC_LIST
     src/GameField.hpp
+    src/Input.hpp
+    src/Input.cpp
     src/GameBoard.hpp
     src/GameBoard.cpp
     src/BattleShip.hpp

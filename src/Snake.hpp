@@ -24,7 +24,5 @@ private:
     int snakeLength = INITIAL_SNAKE_LENGTH;
     pair <unsigned short, unsigned short> snakePosition;
     pair <unsigned short, unsigned short> fruitPosition;
-    enum enumDirection {STOP = 0, LEFT, RIGHT, UP, DOWN};
-    enumDirection direction = STOP;
     unsigned short score = INITIAL_SNAKE_LENGTH;
 };
