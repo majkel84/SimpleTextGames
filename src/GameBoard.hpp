@@ -13,6 +13,7 @@ public:
     GameBoard(int numberOfFields);
     GameBoard(int numberOfFields, char boardDefaultField);
     char getBoardField(int row,int line);
+    void setBoardField(int row,int line, char field);
     void showBoard();
     void chooseField();
     //~GameBoard();

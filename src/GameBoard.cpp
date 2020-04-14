@@ -27,6 +27,11 @@ char GameBoard::getBoardField(int row,int line)
     return gameBoard[row][line];
 }
 
+void GameBoard::setBoardField(int row, int line, char field)
+{
+    gameBoard[row][line] = field;
+}
+
 void GameBoard::showBoard()
 {
     for (auto& row: gameBoard)

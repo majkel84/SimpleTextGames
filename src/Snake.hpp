@@ -15,14 +15,13 @@ public:
     void putFruitOnBoard();
     void drawBoard();
     void clearBoard();
-    void updateScore();
+    int getScore();
 
 private:
     bool gameOver = false;
-    bool snakeFoodEaten = false;
+    bool snakeFoodEaten = true;
     int boardSize;
     int snakeLength = INITIAL_SNAKE_LENGTH;
     pair <unsigned short, unsigned short> snakePosition;
     pair <unsigned short, unsigned short> fruitPosition;
-    unsigned short score = INITIAL_SNAKE_LENGTH;
 };

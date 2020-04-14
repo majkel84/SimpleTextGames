@@ -14,7 +14,7 @@ enum Direction
     RIGHT,
     UP,
     DOWN,
-    ERROR
+    ERROR = -1
 };
 
 void inputEnterOff();
