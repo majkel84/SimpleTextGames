@@ -35,7 +35,6 @@ void Snake::putFruitOnBoard()
                 break;
             }
         }
-
     }
 }
 
