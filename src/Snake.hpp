@@ -21,6 +21,7 @@ private:
     bool gameOver = false;
     bool snakeFoodEaten = true;
     int boardSize;
+    vector <pair <int, int>> snake;
     int snakeLength = INITIAL_SNAKE_LENGTH;
     pair <unsigned short, unsigned short> snakePosition;
     pair <unsigned short, unsigned short> fruitPosition;

@@ -17,9 +17,19 @@ void Snake::setup()
 
 void Snake::setStartPosition()
 {
-    snakePosition.first = boardSize / 2;
-    snakePosition.second = boardSize / 2;
-    gameBoard[snakePosition.first][snakePosition.second] = (char)BoardField::SNAKEHEADRIGHT;
+    snake.push_back(make_pair(boardSize / 2, boardSize / 2));
+    GameBoard::setBoardField(snake[0].first, snake[0].second, (char)BoardField::SNAKEHEADRIGHT);
+    //gameBoard[1][snake[0].second] = (char)BoardField::SNAKEBODY;
+    if (boardSize / 2 >= INITIAL_SNAKE_LENGTH - 1)
+    {
+       for (auto snakeParts = 1; snakeParts < INITIAL_SNAKE_LENGTH; snakeParts++)
+       {
+           snake.push_back(make_pair(snake[0].first, snake[0].second - snakeParts));
+           GameBoard::setBoardField(snake[snakeParts].first, snake[snakeParts].second, (char)BoardField::SNAKEBODY);
+       }
+    }
+    else
+        cout << "Snake too long to start" << endl;
 }
 
 void Snake::putFruitOnBoard()
