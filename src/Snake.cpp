@@ -19,6 +19,7 @@ void Snake::setStartPosition()
 {
     snakePosition.first = boardSize / 2;
     snakePosition.second = boardSize / 2;
+    gameBoard[snakePosition.first][snakePosition.second] = (char)BoardField::SNAKEHEADRIGHT;
 }
 
 void Snake::putFruitOnBoard()
