@@ -23,6 +23,6 @@ private:
     int boardSize;
     vector <pair <int, int>> snake;
     int snakeLength = INITIAL_SNAKE_LENGTH;
-    pair <unsigned short, unsigned short> snakePosition;
+    char actualSNakeHead = (char)BoardField::SNAKEHEADRIGHT;
     pair <unsigned short, unsigned short> fruitPosition;
 };
