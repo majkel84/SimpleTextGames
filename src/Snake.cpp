@@ -86,3 +86,26 @@ enum Direction Snake::getDirection()
     sem_post(&this->snake_sema);
     return result;
 }
+
+void Snake::updateSnakeHeadDirection()
+{
+    enum Direction direct = Snake::getDirection();
+    switch (direct)
+    {
+    case LEFT:
+        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADLEFT;
+        break;
+    case RIGHT:
+        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADRIGHT;
+        break;
+    case UP:
+        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADUP;
+        break;
+    case DOWN:
+        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADDOWN;
+        break;
+    default:
+        break;
+    }
+    gameBoard[snake[0].first][snake[0].second] = actualSNakeHeadDirection;
+}

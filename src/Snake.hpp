@@ -18,6 +18,7 @@ public:
     void clearBoard();
     int getScore();
     enum Direction getDirection();
+    void updateSnakeHeadDirection();
 
 private:
     bool gameOver = false;
