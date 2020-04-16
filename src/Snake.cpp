@@ -53,7 +53,7 @@ void Snake::drawBoard()
 {
     Snake::clearBoard();
     gameBoard[fruitPosition.first][fruitPosition.second] = (char)BoardField::UNKNOWN;
-    gameBoard[snake[0].first][snake[0].second] = actualSNakeHead;
+    gameBoard[snake[0].first][snake[0].second] = actualSNakeHeadDirection;
     for (auto it = 1; it < snake.size(); it++)
         gameBoard[snake[it].first][snake[it].second] = (char)BoardField::SNAKEBODY;
     GameBoard::showBoard();
@@ -78,4 +78,11 @@ int Snake::getScore()
     return snakeLength;
 }
 
-
+enum Direction Snake::getDirection()
+{
+    enum Direction result = RIGHT;
+    sem_wait(&this->snake_sema);
+    result = this->direction;
+    sem_post(&this->snake_sema);
+    return result;
+}

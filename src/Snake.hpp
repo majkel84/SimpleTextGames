@@ -2,6 +2,7 @@
 
 #include <GameField.hpp>
 #include <GameBoard.hpp>
+#include <Input.hpp>
 #include <curses.h>
 
 using namespace std;
@@ -16,6 +17,7 @@ public:
     void drawBoard();
     void clearBoard();
     int getScore();
+    enum Direction getDirection();
 
 private:
     bool gameOver = false;
@@ -23,6 +25,8 @@ private:
     int boardSize;
     vector <pair <int, int>> snake;
     int snakeLength = INITIAL_SNAKE_LENGTH;
-    char actualSNakeHead = (char)BoardField::SNAKEHEADRIGHT;
+    char actualSNakeHeadDirection = (char)BoardField::SNAKEHEADRIGHT;
     pair <unsigned short, unsigned short> fruitPosition;
+    sem_t snake_sema;
+    enum Direction direction;
 };

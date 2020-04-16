@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <iostream>
+#include <semaphore.h>
 
 using namespace std;
 
