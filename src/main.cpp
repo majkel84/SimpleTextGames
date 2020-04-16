@@ -5,7 +5,7 @@
 int main()
 {
     Snake s(5, '.');
-    s.drawBoard();
+    s.setup();
 
     return 0;
 }

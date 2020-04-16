@@ -13,6 +13,7 @@ void Snake::setup()
     while(!gameOver)
     {
         Snake::drawBoard();
+        cout << endl << "Actual score: " << Snake::getScore() << endl;
     }
 }
 
