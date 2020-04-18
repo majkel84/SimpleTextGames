@@ -7,8 +7,9 @@ int main()
     Snake s(5, '.');
     cout << "FIRST" << endl;
     s.drawBoard();
+    s.updateDirection(UP);
     s.updateSnakeMove();
-    cout << "RIGHT" << endl;
+    cout << "UP" << endl;
     s.drawBoard();
 
     return 0;

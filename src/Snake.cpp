@@ -160,15 +160,19 @@ void Snake::updateSnakeMove()
     switch (direct)
     {
     case RIGHT:
+        Snake::updateSnakeHeadDirection();
         Snake::updateSnakePosition(0, 1);
         break;
     case LEFT:
+        Snake::updateSnakeHeadDirection();
         Snake::updateSnakePosition(0, -1);
         break;
     case UP:
+        Snake::updateSnakeHeadDirection();
         Snake::updateSnakePosition(-1, 0);
         break;
     case DOWN:
+        Snake::updateSnakeHeadDirection();
         Snake::updateSnakePosition(1, 0);
         break;
 
@@ -177,9 +181,21 @@ void Snake::updateSnakeMove()
 
 void Snake::updateSnakePosition(short x, short y)
 {
-    for (auto i = 0; i < snake.size(); i++)
+    if (snake[0].first + x == fruitPosition.first && snake[0].second + y == fruitPosition.second)
     {
-        snake[i].first += x;
-        snake[i].second += y;
+        snakeFoodEaten = true;
+        pair <int, int> snakeNewPosition = make_pair(snake[0].first + x, snake[0].second + y);
+        vector <pair<int, int>>::iterator it = snake.begin();
+        snake.insert(it, snakeNewPosition);
+    }
+    else
+    {
+        for (auto i = snake.size(); i > 0; i--)
+        {
+            snake[i].first = snake[i-1].first;
+            snake[i].second = snake[i-1].second;
+        }
+        snake[0].first += x;
+        snake[0].second += y;
     }
 }
