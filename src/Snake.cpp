@@ -15,6 +15,9 @@ void Snake::setup()
         Snake::drawBoard();
         cout << endl << "Actual score: " << Snake::getScore() << endl;
         usleep(TIME_DELAY);
+        Snake::updateSnakeMove();
+        if (snakeFoodEaten)
+            Snake::putFruitOnBoard();
     }
     Snake::snakeGameOver();
 }
@@ -97,33 +100,10 @@ enum Direction Snake::getDirection()
 
 void Snake::updateDirection(Direction direct)
 {
-    direction = direct;
+    direction = Snake::validateDirection(direct);
 }
 
-void Snake::updateSnakeHeadDirection()
-{
-    enum Direction direct = Snake::getDirection();
-    switch (direct)
-    {
-    case LEFT:
-        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADLEFT;
-        break;
-    case RIGHT:
-        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADRIGHT;
-        break;
-    case UP:
-        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADUP;
-        break;
-    case DOWN:
-        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADDOWN;
-        break;
-    default:
-        break;
-    }
-    gameBoard[snake[0].first][snake[0].second] = actualSNakeHeadDirection;
-}
-
-void Snake::updateSnakeHeadNextDirection(Direction direction)
+enum Direction Snake::validateDirection(Direction direction)
 {
     switch (direction)
     {
@@ -152,6 +132,30 @@ void Snake::updateSnakeHeadNextDirection(Direction direction)
         }
         break;
     }
+    return direction;
+}
+
+void Snake::updateSnakeHeadDirection()
+{
+    enum Direction direct = Snake::getDirection();
+    switch (direct)
+    {
+    case LEFT:
+        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADLEFT;
+        break;
+    case RIGHT:
+        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADRIGHT;
+        break;
+    case UP:
+        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADUP;
+        break;
+    case DOWN:
+        actualSNakeHeadDirection = (char)BoardField::SNAKEHEADDOWN;
+        break;
+    default:
+        break;
+    }
+    gameBoard[snake[0].first][snake[0].second] = actualSNakeHeadDirection;
 }
 
 void Snake::updateSnakeMove()
@@ -184,6 +188,7 @@ void Snake::updateSnakePosition(short x, short y)
     if (snake[0].first + x == fruitPosition.first && snake[0].second + y == fruitPosition.second)
     {
         snakeFoodEaten = true;
+        snakeLength++;
         pair <int, int> snakeNewPosition = make_pair(snake[0].first + x, snake[0].second + y);
         vector <pair<int, int>>::iterator it = snake.begin();
         snake.insert(it, snakeNewPosition);

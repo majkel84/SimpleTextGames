@@ -20,8 +20,8 @@ public:
     void snakeGameOver();
     enum Direction getDirection();
     void updateDirection(Direction direct);
+    enum Direction validateDirection(Direction direction);
     void updateSnakeHeadDirection();
-    void updateSnakeHeadNextDirection(enum Direction direction);
     void updateSnakeMove();
     void updateSnakePosition(short x, short y);
 
