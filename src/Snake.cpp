@@ -6,6 +6,7 @@ Snake::Snake(int numberOfFields, char boardDefaultField) : GameBoard(numberOfFie
     srand(time(NULL));
     Snake::setStartPosition();
     Snake::putFruitOnBoard();
+    nextDirection = direction;
 }
 
 void Snake::setup()
@@ -14,6 +15,7 @@ void Snake::setup()
     {
         Snake::drawBoard();
         cout << endl << "Actual score: " << Snake::getScore() << endl;
+        usleep(TIME_DELAY);
     }
 }
 
@@ -82,10 +84,13 @@ int Snake::getScore()
 enum Direction Snake::getDirection()
 {
     enum Direction result = RIGHT;
-    sem_wait(&this->snake_sema);
     result = this->direction;
-    sem_post(&this->snake_sema);
     return result;
+}
+
+void Snake::updateNextDirection(Direction direct)
+{
+    this -> nextDirection = direction;
 }
 
 void Snake::updateSnakeHeadDirection()
@@ -109,4 +114,35 @@ void Snake::updateSnakeHeadDirection()
         break;
     }
     gameBoard[snake[0].first][snake[0].second] = actualSNakeHeadDirection;
+}
+
+void Snake::updateSnakeHeadNextDirection(Direction direction)
+{
+    switch (direction)
+    {
+    case RIGHT:
+        if (this->direction != LEFT)
+        {
+            this->direction = direction;
+        }
+        break;
+    case UP:
+        if (this->direction != DOWN)
+        {
+            this->direction = direction;
+        }
+        break;
+    case LEFT:
+        if (this->direction != RIGHT)
+        {
+            this->direction = direction;
+        }
+        break;
+    case DOWN:
+        if (this->direction != UP)
+        {
+            this->direction = direction;
+        }
+        break;
+    }
 }

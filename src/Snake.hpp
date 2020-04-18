@@ -18,16 +18,18 @@ public:
     void clearBoard();
     int getScore();
     enum Direction getDirection();
+    void updateNextDirection(enum Direction direct);
     void updateSnakeHeadDirection();
+    void updateSnakeHeadNextDirection(enum Direction direction);
 
 private:
     bool gameOver = false;
-    bool snakeFoodEaten = true;
+    bool snakeFoodEaten = false;
     int boardSize;
     vector <pair <int, int>> snake;
     int snakeLength = INITIAL_SNAKE_LENGTH;
     char actualSNakeHeadDirection = (char)BoardField::SNAKEHEADRIGHT;
     pair <unsigned short, unsigned short> fruitPosition;
-    sem_t snake_sema;
     enum Direction direction;
+    enum Direction nextDirection;
 };
