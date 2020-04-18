@@ -30,6 +30,6 @@ private:
     int snakeLength = INITIAL_SNAKE_LENGTH;
     char actualSNakeHeadDirection = (char)BoardField::SNAKEHEADRIGHT;
     pair <unsigned short, unsigned short> fruitPosition;
-    enum Direction direction;
+    enum Direction direction = RIGHT;
     enum Direction nextDirection;
 };

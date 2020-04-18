@@ -83,14 +83,12 @@ int Snake::getScore()
 
 enum Direction Snake::getDirection()
 {
-    enum Direction result = RIGHT;
-    result = this->direction;
-    return result;
+    return direction;
 }
 
 void Snake::updateNextDirection(Direction direct)
 {
-    this -> nextDirection = direction;
+    nextDirection = direction;
 }
 
 void Snake::updateSnakeHeadDirection()
