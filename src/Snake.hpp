@@ -17,10 +17,14 @@ public:
     void drawBoard();
     void clearBoard();
     int getScore();
+    void snakeGameOver();
     enum Direction getDirection();
-    void updateNextDirection(enum Direction direct);
+    void updateDirection(Direction direct);
     void updateSnakeHeadDirection();
     void updateSnakeHeadNextDirection(enum Direction direction);
+    //void updateSnakeLength();
+    void updateSnakeMove();
+    void updateSnakePosition(short x, short y);
 
 private:
     bool gameOver = false;
@@ -31,5 +35,5 @@ private:
     char actualSNakeHeadDirection = (char)BoardField::SNAKEHEADRIGHT;
     pair <unsigned short, unsigned short> fruitPosition;
     enum Direction direction = RIGHT;
-    enum Direction nextDirection;
+    //enum Direction nextDirection;
 };

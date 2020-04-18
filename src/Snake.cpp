@@ -6,7 +6,7 @@ Snake::Snake(int numberOfFields, char boardDefaultField) : GameBoard(numberOfFie
     srand(time(NULL));
     Snake::setStartPosition();
     Snake::putFruitOnBoard();
-    nextDirection = direction;
+    //nextDirection = direction;
 }
 
 void Snake::setup()
@@ -17,6 +17,7 @@ void Snake::setup()
         cout << endl << "Actual score: " << Snake::getScore() << endl;
         usleep(TIME_DELAY);
     }
+    Snake::snakeGameOver();
 }
 
 void Snake::setStartPosition()
@@ -32,7 +33,10 @@ void Snake::setStartPosition()
        }
     }
     else
+    {
         cout << "Snake too long to start" << endl;
+        gameOver = true;
+    }
 }
 
 void Snake::putFruitOnBoard()
@@ -81,14 +85,20 @@ int Snake::getScore()
     return snakeLength;
 }
 
+void Snake::snakeGameOver()
+{
+    cout << "GAME OVER" << endl;
+    cout << "Your score was " << Snake::getScore() << endl;
+}
+
 enum Direction Snake::getDirection()
 {
     return direction;
 }
 
-void Snake::updateNextDirection(Direction direct)
+void Snake::updateDirection(Direction direct)
 {
-    nextDirection = direction;
+    direction = direct;
 }
 
 void Snake::updateSnakeHeadDirection()
@@ -143,4 +153,45 @@ void Snake::updateSnakeHeadNextDirection(Direction direction)
         }
         break;
     }
+}
+
+/*void Snake::updateSnakeLength()
+{
+    if (snake[0].first == fruitPosition.first && snake[0].second == fruitPosition.second)
+    {
+
+        snakeFoodEaten = true;
+    }
+}*/
+
+void Snake::updateSnakeMove()
+{
+    enum Direction direct = getDirection();
+    switch (direct)
+    {
+    case RIGHT:
+        Snake::updateSnakePosition(0, 1);
+        break;
+    case LEFT:
+        Snake::updateSnakePosition(0, -1);
+        break;
+    case UP:
+        Snake::updateSnakePosition(-1, 0);
+        break;
+    case DOWN:
+        Snake::updateSnakePosition(1, 0);
+        break;
+
+    }
+}
+
+void Snake::updateSnakePosition(short x, short y)
+{
+    /*for (auto it: snake)
+    {
+        it.first += x;
+        it.second += y;
+    }*/
+    snake[0].first += x;
+    snake[0].second += y;
 }
