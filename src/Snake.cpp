@@ -18,6 +18,7 @@ void Snake::setup()
         Snake::updateSnakeMove();
         if (snakeFoodEaten)
             Snake::putFruitOnBoard();
+        Snake::isGameOver();
     }
     Snake::snakeGameOver();
 }
@@ -213,14 +214,18 @@ void Snake::isGameOver()
 
 bool Snake::checkIfSnakeIsOnBoard()
 {
-    if (snake[0].first < 0 || snake[0].first > boardSize)
-        return true;
-    if (snake[0].second < 0 || snake[0].second > boardSize)
-        return true;
-    return false;
+    return
+            snake[0].first < 0 ||
+            snake[0].first > boardSize ||
+            snake[0].second < 0 ||
+            snake[0].second > boardSize
+            ? true : false;
 }
 
 bool Snake::cheskIfSnakeIsHit()
 {
+    for (auto i = 1; i < snake.size(); i++)
+        if (snake[0].first == snake[i].first && snake[0].second == snake[i].second)
+            return true;
     return false;
 }
