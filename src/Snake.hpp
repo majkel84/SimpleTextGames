@@ -24,6 +24,9 @@ public:
     void updateSnakeHeadDirection();
     void updateSnakeMove();
     void updateSnakePosition(short x, short y);
+    void isGameOver();
+    bool checkIfSnakeIsOnBoard();
+    bool cheskIfSnakeIsHit();
 
 private:
     bool gameOver = false;

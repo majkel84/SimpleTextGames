@@ -204,3 +204,23 @@ void Snake::updateSnakePosition(short x, short y)
         snake[0].second += y;
     }
 }
+
+void Snake::isGameOver()
+{
+    if (Snake::checkIfSnakeIsOnBoard() || Snake::cheskIfSnakeIsHit())
+        gameOver = true;
+}
+
+bool Snake::checkIfSnakeIsOnBoard()
+{
+    if (snake[0].first < 0 || snake[0].first > boardSize)
+        return true;
+    if (snake[0].second < 0 || snake[0].second > boardSize)
+        return true;
+    return false;
+}
+
+bool Snake::cheskIfSnakeIsHit()
+{
+    return false;
+}
