@@ -6,7 +6,6 @@ Snake::Snake(int numberOfFields, char boardDefaultField) : GameBoard(numberOfFie
     srand(time(NULL));
     Snake::setStartPosition();
     Snake::putFruitOnBoard();
-    //nextDirection = direction;
 }
 
 void Snake::setup()
@@ -155,15 +154,6 @@ void Snake::updateSnakeHeadNextDirection(Direction direction)
     }
 }
 
-/*void Snake::updateSnakeLength()
-{
-    if (snake[0].first == fruitPosition.first && snake[0].second == fruitPosition.second)
-    {
-
-        snakeFoodEaten = true;
-    }
-}*/
-
 void Snake::updateSnakeMove()
 {
     enum Direction direct = getDirection();
@@ -187,11 +177,9 @@ void Snake::updateSnakeMove()
 
 void Snake::updateSnakePosition(short x, short y)
 {
-    /*for (auto it: snake)
+    for (auto i = 0; i < snake.size(); i++)
     {
-        it.first += x;
-        it.second += y;
-    }*/
-    snake[0].first += x;
-    snake[0].second += y;
+        snake[i].first += x;
+        snake[i].second += y;
+    }
 }

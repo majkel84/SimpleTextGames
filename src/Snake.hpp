@@ -22,7 +22,6 @@ public:
     void updateDirection(Direction direct);
     void updateSnakeHeadDirection();
     void updateSnakeHeadNextDirection(enum Direction direction);
-    //void updateSnakeLength();
     void updateSnakeMove();
     void updateSnakePosition(short x, short y);
 
@@ -35,5 +34,4 @@ private:
     char actualSNakeHeadDirection = (char)BoardField::SNAKEHEADRIGHT;
     pair <unsigned short, unsigned short> fruitPosition;
     enum Direction direction = RIGHT;
-    //enum Direction nextDirection;
 };
