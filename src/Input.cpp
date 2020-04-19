@@ -12,15 +12,17 @@ void inputEnterOff()
 void inputEnterOn()
 {
     tcgetattr(STDIN_FILENO, &t);
+    atexit(inputEnterOff);
     t.c_lflag |= ICANON;
+    t.c_cc[VMIN] = 0;
+    t.c_cc[VTIME] = 1;
     tcsetattr(STDIN_FILENO, TCSANOW, &t);
 }
 
-enum Direction getInput()
+enum Direction getInput(char user_input)
 {
     {
         enum Direction result = RIGHT;
-        char user_input = getchar();
         switch (user_input)
         {
         case 'a':
@@ -42,4 +44,12 @@ enum Direction getInput()
         }
         return result;
     }
+}
+
+void inputInit() {}
+
+void initialize()
+{
+    inputInit();
+    inputEnterOff();
 }

@@ -15,4 +15,4 @@ enum class BoardField : char
 };
 
 #define INITIAL_SNAKE_LENGTH 3
-#define TIME_DELAY 1000 * 200
+#define TIME_DELAY 1000 * 500

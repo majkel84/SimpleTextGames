@@ -4,7 +4,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <iostream>
-#include <semaphore.h>
+#include <fcntl.h>
+#include <GameField.hpp>
 
 using namespace std;
 
@@ -20,4 +21,6 @@ enum Direction
 
 void inputEnterOff();
 void inputEnterOn();
-enum Direction getInput();
+enum Direction getInput(char user_input);
+void inputInit();
+void initialize();

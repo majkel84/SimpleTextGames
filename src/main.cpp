@@ -11,6 +11,7 @@ int main()
     s.updateSnakeMove();
     cout << "UP" << endl;
     s.drawBoard();
+    //s.setup();
 
     return 0;
 }
