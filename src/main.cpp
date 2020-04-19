@@ -4,7 +4,7 @@
 
 int main()
 {
-    Snake s(5, '.');
+    Snake s(10, '.');
     cout << "FIRST" << endl;
     s.drawBoard();
     s.updateDirection(UP);

@@ -11,29 +11,13 @@ Snake::Snake(int numberOfFields, char boardDefaultField) : GameBoard(numberOfFie
 
 void Snake::setup()
 {
-    initialize();
+    inputEnterOff();
     while(!gameOver)
     {
         Snake::drawBoard();
         cout << endl << "Actual score: " << Snake::getScore() << endl;
         usleep(TIME_DELAY);
-
-        fd_set fdset;
-        struct timeval timeout;
-        int  rc;
-        timeout.tv_sec = 0,5;   /* wait for 6 seconds for data */
-        timeout.tv_usec = 0;
-        FD_ZERO(&fdset);
-        FD_SET(0, &fdset);
-        rc = select(1, &fdset, NULL, NULL, &timeout);
-        if (rc == 0) {} /* select timed out */
-        else
-        {
-           if (FD_ISSET(0, &fdset))
-           {
-              Snake::updateDirection(getInput(getchar()));
-           }
-        }
+        Snake::updateDirection(getInput(timeDelay()));
         Snake::updateSnakeMove();
         if (snakeFoodEaten)
             Snake::putFruitOnBoard();
@@ -150,6 +134,8 @@ enum Direction Snake::validateDirection(Direction direction)
         {
             this->direction = direction;
         }
+    default:
+        return this -> direction;
         break;
     }
     return direction;
@@ -235,9 +221,9 @@ bool Snake::checkIfSnakeIsOnBoard()
 {
     return
             snake[0].first < 0 ||
-            snake[0].first > boardSize ||
+            snake[0].first > boardSize - 1 ||
             snake[0].second < 0 ||
-            snake[0].second > boardSize
+            snake[0].second > boardSize - 1
             ? true : false;
 }
 
