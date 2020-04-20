@@ -5,3 +5,5 @@
 
 Simple text games:
 * Battle Ship
+* Tic Tac Toe
+* Snake (to play it uncoment s.setup())
