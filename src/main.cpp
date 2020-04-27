@@ -1,9 +1,11 @@
 #include "BattleShip.hpp"
 #include "OX.hpp"
 #include "Snake.hpp"
+#include "Pong.hpp"
 
 int main()
 {
+    /*
     Snake s(10, '.');
     cout << "FIRST" << endl;
     s.drawBoard();
@@ -12,6 +14,8 @@ int main()
     cout << "UP" << endl;
     s.drawBoard();
     //s.setup();
-
+*/
+    Pong p;
+    p.showBoard();
     return 0;
 }

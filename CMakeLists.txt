@@ -54,6 +54,8 @@ set(SRC_LIST
     src/BattleShip.cpp
     src/OX.hpp
     src/OX.cpp
+    src/Pong.hpp
+    src/Pong.cpp
     src/Snake.hpp
     src/Snake.cpp
     )

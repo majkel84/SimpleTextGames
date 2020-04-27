@@ -11,7 +11,8 @@ enum class BoardField : char
     SNAKEHEADDOWN = 'V',
     SNAKEBODY = 'o',
     SNAKEBOARD = '.',
-    BLANK = ' '
+    BLANK = ' ',
+    WALL = '#'
 };
 
 #define INITIAL_SNAKE_LENGTH 3

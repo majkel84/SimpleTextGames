@@ -15,7 +15,7 @@ public:
     char getBoardField(int row,int line);
     void setBoardField(int row,int line, char field);
     void showBoard();
-    void chooseField();
+    void fillGameBoardLine(int numberOfChars, char value);
     //~GameBoard();
 protected:
     vector<vector<char>> gameBoard;
