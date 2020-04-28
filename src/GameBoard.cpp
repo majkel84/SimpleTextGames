@@ -2,15 +2,15 @@
 
 GameBoard::GameBoard()
 {
-    GameBoard::fillGameBoardLine(20, (char)BoardField::WALL);
-    for (auto rows = 1; rows < 10; rows++)
+    GameBoard::fillGameBoardLine(30, (char)BoardField::WALL);
+    for (auto rows = 1; rows < 20; rows++)
     {
         vector<char> row;
-        for (auto lines = 0; lines < 20; lines++)
+        for (auto lines = 0; lines < 30; lines++)
             row.push_back((char)BoardField::SNAKEBOARD);
         gameBoard.push_back(row);
     }
-    GameBoard::fillGameBoardLine(20, (char)BoardField::WALL);
+    GameBoard::fillGameBoardLine(30, (char)BoardField::WALL);
 }
 
 GameBoard::GameBoard(int numberOfFields)
