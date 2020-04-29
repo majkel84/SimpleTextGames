@@ -12,8 +12,12 @@ public:
     Pong();
     void showBoard();
     void setBallOnBoard(unsigned posX, unsigned posY);
+    void setBallDirection(enum Direction newDirection);
+    pair<unsigned, unsigned> getScore();
+    void updateScore(unsigned player);
 private:
     unsigned short actualPaddlePosition = 0;
+    pair <unsigned, unsigned> score;
     pair <unsigned,unsigned> ballPosition;
     enum Direction ballDirection = RIGHT;
 };
