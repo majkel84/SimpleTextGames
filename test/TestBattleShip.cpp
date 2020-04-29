@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 #include "BattleShip.hpp"
 
-
 struct TestBattleShip : public ::testing::Test
 {
     BattleShip bs = BattleShip(5);

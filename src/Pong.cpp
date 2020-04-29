@@ -11,6 +11,7 @@ Pong::Pong()
 
 void Pong::showBoard()
 {
+    Pong::showScore();
     GameBoard::showBoard();
 }
 
@@ -18,6 +19,11 @@ void Pong::setBallOnBoard(unsigned posX, unsigned posY)
 {
     ballPosition.first = posX;
     ballPosition.second = posY;
+}
+
+pair<unsigned, unsigned> Pong::getBallPosition()
+{
+    return ballPosition;
 }
 
 void Pong::setBallDirection(enum Direction newDirection)
@@ -42,6 +48,11 @@ void Pong::updateScore(unsigned player)
     default:
         break;
     }
+}
+
+void Pong::showScore()
+{
+    cout << "PLAYER 1 - " << score.first << " : PLAYER 2 - " << score.second << '\n';
 }
 
 unsigned short Padle::setPadleStartPosition(int gameBoardHeight)

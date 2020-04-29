@@ -75,6 +75,7 @@ set(TEST_SRC_LIST
     test/test_main.cpp
     test/TestBattleShip.cpp
     test/TestOX.cpp
+    test/TestPong.cpp
 )
 
 link_libraries(gtest)
