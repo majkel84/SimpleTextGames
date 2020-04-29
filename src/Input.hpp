@@ -16,6 +16,10 @@ enum Direction
     RIGHT,
     UP,
     DOWN,
+    UPLEFT,
+    UPRIGHT,
+    DOWNLEFT,
+    DOWNRIGHT,
     ERROR = -1
 };
 

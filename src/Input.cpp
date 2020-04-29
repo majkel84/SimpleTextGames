@@ -9,16 +9,6 @@ void inputEnterOff()
     tcsetattr(STDIN_FILENO, TCSANOW, &t);
 }
 
-/*void inputEnterOn()
-{
-    tcgetattr(STDIN_FILENO, &t);
-    atexit(inputEnterOff);
-    t.c_lflag |= ICANON;
-    t.c_cc[VMIN] = 0;
-    t.c_cc[VTIME] = 1;
-    tcsetattr(STDIN_FILENO, TCSANOW, &t);
-}*/
-
 enum Direction getInput(char user_input)
 {
     {

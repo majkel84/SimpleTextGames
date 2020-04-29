@@ -2,6 +2,7 @@
 
 #include <GameBoard.hpp>
 #include <GameField.hpp>
+#include <Input.hpp>
 
 using namespace std;
 
@@ -14,6 +15,7 @@ public:
 private:
     unsigned short actualPaddlePosition = 0;
     pair <unsigned,unsigned> ballPosition;
+    enum Direction ballDirection = RIGHT;
 };
 
 class Padle
