@@ -11,7 +11,7 @@ class Pong : public GameBoard
 public:
     Pong();
     void showBoard();
-    void setBallOnBoard();
+    void setBallOnBoard(unsigned posX, unsigned posY);
 private:
     unsigned short actualPaddlePosition = 0;
     pair <unsigned,unsigned> ballPosition;
