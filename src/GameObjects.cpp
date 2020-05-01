@@ -1,6 +1,6 @@
 #include "GameObjects.hpp"
 
-unsigned short Padle::setPadleStartPosition(int gameBoardHeight)
+unsigned short Padle::setPadlePosition(int gameBoardHeight)
 {
     return position.first = gameBoardHeight / 2 - paddleSize / 2;
 }

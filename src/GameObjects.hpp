@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <utility>
 
 using namespace std;
@@ -13,7 +14,7 @@ protected:
 class Padle : public GameObjects
 {
 public:
-    unsigned short setPadleStartPosition(int gameBoardHeight);
+    unsigned short setPadlePosition(int gameBoardHeight);
     unsigned short getPadleSize();
 private:
     const unsigned short paddleSize = 5;

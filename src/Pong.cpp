@@ -4,8 +4,10 @@ Pong::Pong()
 {
     Padle padle;
     Ball ball;
-    actualPaddlePosition = padle.setPadleStartPosition(gameBoard.size());
-    //GameBoard::setBoardField(ballPosition.first, ballPosition.second,(char)BoardField::BALL);
+    actualPaddlePosition = padle.setPadlePosition(gameBoard.size());
+    ball.setBallPosition(gameBoard.size() / 2, gameBoard[0].size() / 2);
+    GameBoard::setBoardField(ball.getBallPosition(),(char)BoardField::BALL);
+    //cout << "Ball: " <<
     score = make_pair(0, 0);
 }
 
@@ -37,9 +39,4 @@ void Pong::updateScore(unsigned player)
 void Pong::showScore()
 {
     cout << "PLAYER 1 - " << score.first << " : PLAYER 2 - " << score.second << '\n';
-}
-
-unsigned short Padle::setPadleStartPosition(int gameBoardHeight)
-{
-    return gameBoardHeight / 2 - paddleSize / 2;
 }

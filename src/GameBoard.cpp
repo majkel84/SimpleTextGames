@@ -45,6 +45,11 @@ void GameBoard::setBoardField(int row, int line, char field)
     gameBoard[row][line] = field;
 }
 
+void GameBoard::setBoardField(pair<unsigned, unsigned> position, char field)
+{
+    gameBoard[position.first][position.second] = field;
+}
+
 void GameBoard::showBoard()
 {
     for (auto& row: gameBoard)

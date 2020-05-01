@@ -12,9 +12,6 @@ class Pong : public GameBoard
 public:
     Pong();
     void showBoard();
-    //void setBallOnBoard(unsigned posX, unsigned posY);
-    //pair<unsigned, unsigned> getBallPosition();
-    //void setBallDirection(enum Direction newDirection);
     pair<unsigned, unsigned> getScore();
     void updateScore(unsigned player);
     void showScore();
