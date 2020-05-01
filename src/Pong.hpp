@@ -12,10 +12,14 @@ class Pong : public GameBoard
 public:
     Pong();
     void showBoard();
+    void setPadle();
     pair<unsigned, unsigned> getScore();
     void updateScore(unsigned player);
     void showScore();
 private:
-    unsigned short actualPaddlePosition = 0;
+    Padle p1, p2;
+    Ball ball;
+    unsigned short actualPaddleOnePosition = 0;
+    unsigned short actualPaddleTwoPosition = 0;
     pair <unsigned, unsigned> score;
 };

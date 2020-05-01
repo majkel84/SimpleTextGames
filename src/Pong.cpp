@@ -2,19 +2,27 @@
 
 Pong::Pong()
 {
-    Padle padle;
-    Ball ball;
-    actualPaddlePosition = padle.setPadlePosition(gameBoard.size());
-    ball.setBallPosition(gameBoard.size() / 2, gameBoard[0].size() / 2);
-    GameBoard::setBoardField(ball.getBallPosition(),(char)BoardField::BALL);
-    //cout << "Ball: " <<
+    actualPaddleOnePosition = p1.setPadlePosition(gameBoard.size() / 2);
+    actualPaddleTwoPosition = actualPaddleOnePosition;
+    ball.setBallPosition(gameBoard.size() / 2, gameBoard[0].size() / 2  );
+    GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
     score = make_pair(0, 0);
 }
 
 void Pong::showBoard()
 {
     Pong::showScore();
+    Pong::setPadle();
     GameBoard::showBoard();
+}
+
+void Pong::setPadle()
+{
+    for (auto it = 0; it < p1.getPadleSize(); it++)
+    {
+        GameBoard::setBoardField(actualPaddleOnePosition + it, 0, (char)BoardField::PADLE);
+        GameBoard::setBoardField(actualPaddleTwoPosition + it, gameBoard[0].size() - 1, (char)BoardField::PADLE);
+    }
 }
 
 pair<unsigned, unsigned> Pong::getScore()

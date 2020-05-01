@@ -1,8 +1,13 @@
 #include "GameObjects.hpp"
 
-unsigned short Padle::setPadlePosition(int gameBoardHeight)
+pair <unsigned, unsigned> GameObjects::getPosition()
 {
-    return position.first = gameBoardHeight / 2 - paddleSize / 2;
+    return position;
+}
+
+unsigned short Padle::setPadlePosition(int padlePosition)
+{
+    return position.first = padlePosition - paddleSize / 2;
 }
 
 unsigned short Padle::getPadleSize()
@@ -16,7 +21,7 @@ pair <unsigned, unsigned> Ball::setBallPosition(unsigned posX, unsigned posY)
     position.second = posY;
 }
 
-pair <unsigned, unsigned> Ball::getBallPosition()
+pair <unsigned, unsigned> Ball::getPosition()
 {
     return position;
 }
