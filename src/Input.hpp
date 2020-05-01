@@ -24,6 +24,5 @@ enum Direction
 };
 
 void inputEnterOff();
-//void inputEnterOn();
 enum Direction getInput(char user_input);
 char timeDelay();

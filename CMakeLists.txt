@@ -48,6 +48,8 @@ set(SRC_LIST
     src/GameField.hpp
     src/Input.hpp
     src/Input.cpp
+    src/GameObjects.hpp
+    src/GameObjects.cpp
     src/GameBoard.hpp
     src/GameBoard.cpp
     src/BattleShip.hpp
@@ -75,7 +77,7 @@ set(TEST_SRC_LIST
     test/test_main.cpp
     test/TestBattleShip.cpp
     test/TestOX.cpp
-    test/TestPong.cpp
+    test/TestGameObjects.cpp
 )
 
 link_libraries(gtest)

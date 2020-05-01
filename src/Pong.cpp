@@ -3,9 +3,9 @@
 Pong::Pong()
 {
     Padle padle;
+    Ball ball;
     actualPaddlePosition = padle.setPadleStartPosition(gameBoard.size());
-    Pong::setBallOnBoard(gameBoard.size() / 2, gameBoard[0].size() / 2);
-    GameBoard::setBoardField(ballPosition.first, ballPosition.second,(char)BoardField::BALL);
+    //GameBoard::setBoardField(ballPosition.first, ballPosition.second,(char)BoardField::BALL);
     score = make_pair(0, 0);
 }
 
@@ -13,22 +13,6 @@ void Pong::showBoard()
 {
     Pong::showScore();
     GameBoard::showBoard();
-}
-
-void Pong::setBallOnBoard(unsigned posX, unsigned posY)
-{
-    ballPosition.first = posX;
-    ballPosition.second = posY;
-}
-
-pair<unsigned, unsigned> Pong::getBallPosition()
-{
-    return ballPosition;
-}
-
-void Pong::setBallDirection(enum Direction newDirection)
-{
-    ballDirection = newDirection;
 }
 
 pair<unsigned, unsigned> Pong::getScore()
