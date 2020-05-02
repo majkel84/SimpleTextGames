@@ -19,13 +19,14 @@ public:
     void updateScore(unsigned player);
     void showScore();
     void updatePadleMove(Direction direction);
-    void updatePadlePosition(short y);
-    bool checkIsPadleOnBoard(short move);
+    void updatePadlePosition(short y, short player);
+    bool checkIsPadleOnBoard(short move, short player);
 
 private:
     Padle p1, p2;
     Ball ball;
-    unsigned short actualPaddleOnePosition = 0;
-    unsigned short actualPaddleTwoPosition = 0;
+    unsigned short actualPadlePosition[2] = {0, 0};
+    //unsigned short actualPaddleOnePosition = 0;
+    //unsigned short actualPaddleTwoPosition = 0;
     pair <unsigned, unsigned> score;
 };

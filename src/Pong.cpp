@@ -2,8 +2,8 @@
 
 Pong::Pong()
 {
-    actualPaddleOnePosition = p1.setPadlePosition(gameBoard.size() / 2);
-    actualPaddleTwoPosition = actualPaddleOnePosition;
+    actualPadlePosition[0] = p1.setPadlePosition(gameBoard.size() / 2);
+    actualPadlePosition[1] = actualPadlePosition[0];
     ball.setBallPosition(gameBoard.size() / 2, gameBoard[0].size() / 2  );
     GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
     score = make_pair(0, 0);
@@ -12,7 +12,7 @@ Pong::Pong()
 void Pong::setup()
 {
     showBoard();
-    updatePadlePosition(3);
+    updatePadlePosition(3,0);
     showBoard();
 }
 
@@ -35,8 +35,8 @@ void Pong::setPadle()
     Pong::clearColumn(gameBoard[0].size() - 1);
     for (auto it = 0; it < p1.getPadleSize(); it++)
     {
-        GameBoard::setBoardField(actualPaddleOnePosition + it, 0, (char)BoardField::PADLE);
-        GameBoard::setBoardField(actualPaddleTwoPosition + it, gameBoard[0].size() - 1, (char)BoardField::PADLE);
+        GameBoard::setBoardField(actualPadlePosition[0] + it, 0, (char)BoardField::PADLE);
+        GameBoard::setBoardField(actualPadlePosition[1] + it, gameBoard[0].size() - 1, (char)BoardField::PADLE);
     }
 }
 
@@ -69,29 +69,29 @@ void Pong::updatePadleMove(Direction direction)
     switch (direction)
     {
     case UP:
-        updatePadlePosition(-1);
+        updatePadlePosition(-1, 0);
         break;
     case DOWN:
-        updatePadlePosition(1);
+        updatePadlePosition(1, 0);
         break;
     default:
         break;
     }
 }
 
-void Pong::updatePadlePosition(short y)
+void Pong::updatePadlePosition(short y, short player)
 {
-    if (Pong::checkIsPadleOnBoard(y))
-    {
-        actualPaddleOnePosition += y;
-        setPadle();
-    }
+        if (Pong::checkIsPadleOnBoard(y, player))
+        {
+            actualPadlePosition[player] += y;
+            setPadle();
+        }
 }
 
-bool Pong::checkIsPadleOnBoard(short move)
+bool Pong::checkIsPadleOnBoard(short move, short player)
 {
-    return actualPaddleOnePosition + move > 0
-            ? (actualPaddleOnePosition + move + p1.getPadleSize() < gameBoard.size()
-               ? true : false)
-            : false;
+        return actualPadlePosition[player] + move > 0
+                ? (actualPadlePosition[player] + move + p1.getPadleSize() < gameBoard.size()
+                   ? true : false)
+                : false;
 }
