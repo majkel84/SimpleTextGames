@@ -11,11 +11,16 @@ class Pong : public GameBoard
 {
 public:
     Pong();
+    void setup();
     void showBoard();
+    void clearColumn(short columnNumber);
     void setPadle();
     pair<unsigned, unsigned> getScore();
     void updateScore(unsigned player);
     void showScore();
+    void updatePadleMove(Direction direction);
+    void updatePadlePosition(short y);
+
 private:
     Padle p1, p2;
     Ball ball;

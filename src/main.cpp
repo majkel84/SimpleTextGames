@@ -16,6 +16,6 @@ int main()
     //s.setup();
 */
     Pong p;
-    p.showBoard();
+    p.setup();
     return 0;
 }

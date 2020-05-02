@@ -9,6 +9,13 @@ Pong::Pong()
     score = make_pair(0, 0);
 }
 
+void Pong::setup()
+{
+    showBoard();
+    updatePadlePosition(3);
+    showBoard();
+}
+
 void Pong::showBoard()
 {
     Pong::showScore();
@@ -16,8 +23,16 @@ void Pong::showBoard()
     GameBoard::showBoard();
 }
 
+void Pong::clearColumn(short columnNumber)
+{
+    for (auto it = 1; it < gameBoard.size() - 1; it++)
+        GameBoard::setBoardField(it, columnNumber, (char)BoardField::SNAKEBOARD);
+}
+
 void Pong::setPadle()
 {
+    Pong::clearColumn(0);
+    Pong::clearColumn(gameBoard[0].size() - 1);
     for (auto it = 0; it < p1.getPadleSize(); it++)
     {
         GameBoard::setBoardField(actualPaddleOnePosition + it, 0, (char)BoardField::PADLE);
@@ -47,4 +62,25 @@ void Pong::updateScore(unsigned player)
 void Pong::showScore()
 {
     cout << "PLAYER 1 - " << score.first << " : PLAYER 2 - " << score.second << '\n';
+}
+
+void Pong::updatePadleMove(Direction direction)
+{
+    switch (direction)
+    {
+    case UP:
+        updatePadlePosition(-1);
+        break;
+    case DOWN:
+        updatePadlePosition(1);
+        break;
+    default:
+        break;
+    }
+}
+
+void Pong::updatePadlePosition(short y)
+{
+    actualPaddleOnePosition += y;
+    setPadle();
 }
