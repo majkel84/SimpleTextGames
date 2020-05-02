@@ -20,6 +20,7 @@ public:
     void showScore();
     void updatePadleMove(Direction direction);
     void updatePadlePosition(short y);
+    bool checkIsPadleOnBoard(short move);
 
 private:
     Padle p1, p2;

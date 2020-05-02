@@ -81,6 +81,17 @@ void Pong::updatePadleMove(Direction direction)
 
 void Pong::updatePadlePosition(short y)
 {
-    actualPaddleOnePosition += y;
-    setPadle();
+    if (Pong::checkIsPadleOnBoard(y))
+    {
+        actualPaddleOnePosition += y;
+        setPadle();
+    }
+}
+
+bool Pong::checkIsPadleOnBoard(short move)
+{
+    return actualPaddleOnePosition + move > 0
+            ? (actualPaddleOnePosition + move + p1.getPadleSize() < gameBoard.size()
+               ? true : false)
+            : false;
 }
