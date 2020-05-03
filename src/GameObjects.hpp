@@ -2,6 +2,9 @@
 
 #include <iostream>
 #include <utility>
+#include <GameBoard.hpp>
+#include <GameField.hpp>
+#include <Input.hpp>
 
 using namespace std;
 
@@ -19,6 +22,7 @@ class Padle : public GameObjects
 public:
     unsigned short setPadlePosition(int padlePosition);
     unsigned short getPadleSize();
+    bool checkIsPadleOnBoard(short move, short player);
 private:
     const unsigned short paddleSize = 5;
 };

@@ -26,7 +26,5 @@ private:
     Padle p1, p2;
     Ball ball;
     unsigned short actualPadlePosition[2] = {0, 0};
-    //unsigned short actualPaddleOnePosition = 0;
-    //unsigned short actualPaddleTwoPosition = 0;
     pair <unsigned, unsigned> score;
 };
