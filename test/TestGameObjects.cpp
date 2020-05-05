@@ -9,7 +9,7 @@ struct TestGameObjects : public ::testing::Test
 
 TEST_F(TestGameObjects, checkBallPosition)
 {
-    ball.setBallPosition(1,1);
+    ball.setBallPosition(make_pair(1,1));
     pair<unsigned, unsigned> b = ball.getPosition();
     ASSERT_EQ(b.first, 1);
     ASSERT_EQ(b.second, 1);

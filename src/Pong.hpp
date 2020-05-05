@@ -27,5 +27,6 @@ private:
     Padle p1, p2;
     Ball ball;
     unsigned short actualPadlePosition[2] = {0, 0};
+    enum Direction actualBallDirection = DOWNLEFT;
     pair <unsigned, unsigned> score;
 };

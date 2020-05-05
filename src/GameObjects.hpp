@@ -30,6 +30,7 @@ private:
 class Ball : public GameObjects
 {
 public:
-    pair <unsigned, unsigned> setBallPosition(unsigned posX, unsigned posY);
+    void setBallPosition(pair<short, short> position);
     pair <unsigned, unsigned> getPosition();
+    pair <short, short> updateBallMovement(enum Direction direction);
 };

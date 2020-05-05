@@ -4,7 +4,7 @@ Pong::Pong()
 {
     actualPadlePosition[0] = p1.setPadlePosition(gameBoard.size() / 2);
     actualPadlePosition[1] = actualPadlePosition[0];
-    ball.setBallPosition(gameBoard.size() / 2, gameBoard[0].size() / 2  );
+    ball.setBallPosition(make_pair(gameBoard.size() / 2, gameBoard[0].size() / 2));
     GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
     score = make_pair(0, 0);
 }
@@ -17,6 +17,8 @@ void Pong::setup()
         Pong::showScore();
         Pong::showBoard();
         usleep(TIME_DELAY);
+        ball.setBallPosition(ball.updateBallMovement(actualBallDirection));
+        GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
         Pong::updatePadleMove(getInput(timeDelay()));
     }
 }
