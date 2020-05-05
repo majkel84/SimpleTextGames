@@ -11,9 +11,17 @@ Pong::Pong()
 
 void Pong::setup()
 {
-    showBoard();
+    /*showBoard();
     updatePadlePosition(3,0);
-    showBoard();
+    showBoard();*/
+    inputEnterOff();
+    while(1)
+    {
+        Pong::showScore();
+        Pong::showBoard();
+        usleep(TIME_DELAY);
+        Pong::updatePadleMove(getInput(timeDelay()));
+    }
 }
 
 void Pong::showBoard()
