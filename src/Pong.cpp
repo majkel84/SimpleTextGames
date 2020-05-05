@@ -17,6 +17,7 @@ void Pong::setup()
         Pong::showScore();
         Pong::showBoard();
         usleep(TIME_DELAY);
+        GameBoard::setBoardField(ball.getPosition(),(char)BoardField::SNAKEBOARD);
         ball.setBallPosition(ball.updateBallMovement(actualBallDirection));
         GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
         Pong::updatePadleMove(getInput(timeDelay()));
