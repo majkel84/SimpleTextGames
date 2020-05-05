@@ -108,3 +108,6 @@ bool Pong::checkIsPadleOnBoard(short move, short player)
                    ? true : false)
                 : false;
 }
+
+void Pong::checkBallIsOnboard()
+{}

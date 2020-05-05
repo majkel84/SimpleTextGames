@@ -22,6 +22,7 @@ public:
     void updatePadleMove(Direction direction);
     void updatePadlePosition(short y, short player);
     bool checkIsPadleOnBoard(short move, short player);
+    void checkBallIsOnboard();
 
 private:
     Padle p1, p2;

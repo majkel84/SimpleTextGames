@@ -5,7 +5,6 @@
 
 int main()
 {
-    /*
     Snake s(10, '.');
     cout << "FIRST" << endl;
     s.drawBoard();
@@ -14,8 +13,8 @@ int main()
     cout << "UP" << endl;
     s.drawBoard();
     //s.setup();
-*/
-    Pong p;
-    p.setup();
+
+    //Pong p;
+    //p.setup();
     return 0;
 }
