@@ -18,6 +18,7 @@ public:
     pair<unsigned, unsigned> getScore();
     void updateScore(unsigned player);
     void showScore();
+    bool gameOver();
     void updatePadleMove(Direction direction);
     void updatePadlePosition(short y, short player);
     bool checkIsPadleOnBoard(short move, short player);

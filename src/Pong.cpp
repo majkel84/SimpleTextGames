@@ -11,11 +11,8 @@ Pong::Pong()
 
 void Pong::setup()
 {
-    /*showBoard();
-    updatePadlePosition(3,0);
-    showBoard();*/
     inputEnterOff();
-    while(1)
+    while(!gameOver())
     {
         Pong::showScore();
         Pong::showBoard();
@@ -70,6 +67,11 @@ void Pong::updateScore(unsigned player)
 void Pong::showScore()
 {
     cout << "PLAYER 1 - " << score.first << " : PLAYER 2 - " << score.second << '\n';
+}
+
+bool Pong::gameOver()
+{
+    return (score.first || score.second) >= 3 ? true : false;
 }
 
 void Pong::updatePadleMove(Direction direction)
