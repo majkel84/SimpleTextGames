@@ -33,4 +33,5 @@ public:
     void setBallPosition(pair<short, short> position);
     pair <unsigned, unsigned> getPosition();
     pair <short, short> updateBallMovement(enum Direction direction);
+    enum Direction updateBallDirection(enum Direction direction);
 };

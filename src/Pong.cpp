@@ -17,9 +17,7 @@ void Pong::setup()
         Pong::showScore();
         Pong::showBoard();
         usleep(TIME_DELAY);
-        GameBoard::setBoardField(ball.getPosition(),(char)BoardField::SNAKEBOARD);
-        ball.setBallPosition(ball.updateBallMovement(actualBallDirection));
-        GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
+        Pong::moveBall();
         Pong::updatePadleMove(getInput(timeDelay()));
     }
 }
@@ -107,6 +105,13 @@ bool Pong::checkIsPadleOnBoard(short move, short player)
                 ? (actualPadlePosition[player] + move + p1.getPadleSize() < gameBoard.size()
                    ? true : false)
                 : false;
+}
+
+void Pong::moveBall()
+{
+    GameBoard::setBoardField(ball.getPosition(),(char)BoardField::SNAKEBOARD);
+    ball.setBallPosition(ball.updateBallMovement(actualBallDirection));
+    GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
 }
 
 void Pong::checkBallIsOnboard()

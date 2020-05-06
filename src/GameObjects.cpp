@@ -60,3 +60,24 @@ pair<short, short> Ball::updateBallMovement(Direction direction)
     }
     return make_pair(0, 0);
 }
+
+enum Direction Ball::updateBallDirection(Direction direction)
+{
+    switch (direction) {
+    case UPRIGHT:
+        return DOWNRIGHT;
+        break;
+    case UPLEFT:
+        return DOWNLEFT;
+        break;
+    case DOWNRIGHT:
+        return UPRIGHT;
+        break;
+    case DOWNLEFT:
+        return UPLEFT;
+        break;
+    default:
+        break;
+    }
+    return direction;
+}
