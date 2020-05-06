@@ -109,10 +109,15 @@ bool Pong::checkIsPadleOnBoard(short move, short player)
 
 void Pong::moveBall()
 {
+    cout << "ball -  " << ball.getBallVerticalPosition() << endl;
+    Pong::checkBallIsOnboard();
     GameBoard::setBoardField(ball.getPosition(),(char)BoardField::SNAKEBOARD);
     ball.setBallPosition(ball.updateBallMovement(actualBallDirection));
     GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
 }
 
 void Pong::checkBallIsOnboard()
-{}
+{
+    if (ball.getBallVerticalPosition() == 1 || ball.getBallVerticalPosition() == gameBoard.size() - 2)
+        actualBallDirection = ball.updateBallDirection(actualBallDirection);
+}

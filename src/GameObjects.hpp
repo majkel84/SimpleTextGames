@@ -32,6 +32,7 @@ class Ball : public GameObjects
 public:
     void setBallPosition(pair<short, short> position);
     pair <unsigned, unsigned> getPosition();
+    unsigned getBallVerticalPosition();
     pair <short, short> updateBallMovement(enum Direction direction);
     enum Direction updateBallDirection(enum Direction direction);
 };
