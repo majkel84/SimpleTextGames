@@ -15,9 +15,11 @@ public:
     void showBoard();
     void clearColumn(short columnNumber);
     void setPadle();
+    void setBallStartPosition();
     pair<unsigned, unsigned> getScore();
     void updateScore(unsigned player);
     void showScore();
+    void checkIsScore();
     bool gameOver();
     void updatePadleMove(Direction direction);
     void updatePadlePosition(short y, short player);

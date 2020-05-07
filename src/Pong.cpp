@@ -4,7 +4,7 @@ Pong::Pong()
 {
     actualPadlePosition[0] = p1.setPadlePosition(gameBoard.size() / 2);
     actualPadlePosition[1] = actualPadlePosition[0];
-    ball.setBallPosition(make_pair(gameBoard.size() / 2, gameBoard[0].size() / 2));
+    Pong::setBallStartPosition();
     GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
     score = make_pair(0, 0);
 }
@@ -14,7 +14,6 @@ void Pong::setup()
     inputEnterOff();
     while(!gameOver())
     {
-        Pong::showScore();
         Pong::showBoard();
         usleep(TIME_DELAY);
         Pong::moveBall();
@@ -46,6 +45,11 @@ void Pong::setPadle()
     }
 }
 
+void Pong::setBallStartPosition()
+{
+    ball.setBallPosition(make_pair(gameBoard.size() / 2, gameBoard[0].size() / 2));
+}
+
 pair<unsigned, unsigned> Pong::getScore()
 {
     return score;
@@ -68,6 +72,22 @@ void Pong::updateScore(unsigned player)
 void Pong::showScore()
 {
     cout << "PLAYER 1 - " << score.first << " : PLAYER 2 - " << score.second << '\n';
+}
+
+void Pong::checkIsScore()
+{
+    if (ball.getBallHorizontalPosition() == 0)
+    {
+        Pong::updateScore(2);
+        Pong::setBallStartPosition();
+        //GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
+    }
+    else if (ball.getBallHorizontalPosition() == gameBoard[0].size())
+    {
+        Pong::updateScore(1);
+        Pong::setBallStartPosition();
+        GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
+    }
 }
 
 bool Pong::gameOver()
@@ -109,11 +129,15 @@ bool Pong::checkIsPadleOnBoard(short move, short player)
 
 void Pong::moveBall()
 {
-    cout << "ball -  " << ball.getBallVerticalPosition() << endl;
+    cout << "check" << endl;
     Pong::checkBallIsOnboard();
-    GameBoard::setBoardField(ball.getPosition(),(char)BoardField::SNAKEBOARD);
+    cout << "get" << endl;
+    GameBoard::setBoardField(ball.getBallVerticalPosition(),ball.getBallHorizontalPosition(),(char)BoardField::SNAKEBOARD);
+    cout << "set" << endl;
     ball.setBallPosition(ball.updateBallMovement(actualBallDirection));
-    GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
+    cout << "setfield" << endl;
+    GameBoard::setBoardField(ball.getBallVerticalPosition(),ball.getBallHorizontalPosition(),(char)BoardField::BALL);
+    Pong::checkIsScore();
 }
 
 void Pong::checkBallIsOnboard()

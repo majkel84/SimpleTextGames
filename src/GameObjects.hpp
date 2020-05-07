@@ -33,6 +33,7 @@ public:
     void setBallPosition(pair<short, short> position);
     pair <unsigned, unsigned> getPosition();
     unsigned getBallVerticalPosition();
+    unsigned getBallHorizontalPosition();
     pair <short, short> updateBallMovement(enum Direction direction);
     enum Direction updateBallDirection(enum Direction direction);
 };

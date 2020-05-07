@@ -19,18 +19,23 @@ void Ball::setBallPosition(pair <short, short> position)
 {
     this -> position.first += position.first;
     this -> position.second += position.second;
-    //cout << this -> position.first << endl;
-    //cout << this -> position.second << endl;
 }
 
 pair <unsigned, unsigned> Ball::getPosition()
 {
+    cout << position.first;
+    cout << position.second;
     return position;
 }
 
 unsigned Ball::getBallVerticalPosition()
 {
     return position.first;
+}
+
+unsigned Ball::getBallHorizontalPosition()
+{
+    return position.second;
 }
 
 pair<short, short> Ball::updateBallMovement(Direction direction)
