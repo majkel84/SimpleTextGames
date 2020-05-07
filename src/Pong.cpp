@@ -79,14 +79,17 @@ void Pong::checkIsScore()
     if (ball.getBallHorizontalPosition() == 0)
     {
         Pong::updateScore(2);
-        Pong::setBallStartPosition();
-        //GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
+        //Pong::setBallStartPosition();
+        //actualBallDirection = UPRIGHT;
+        GameBoard::setBoardField(ball.getPosition(),(char)BoardField::SNAKEBOARD);
+        ball.setBallPosition(make_pair(15, 23));
+        GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
     }
     else if (ball.getBallHorizontalPosition() == gameBoard[0].size())
     {
         Pong::updateScore(1);
-        Pong::setBallStartPosition();
-        GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
+        //Pong::setBallStartPosition();
+        //actualBallDirection = UPLEFT;
     }
 }
 
@@ -129,14 +132,10 @@ bool Pong::checkIsPadleOnBoard(short move, short player)
 
 void Pong::moveBall()
 {
-    cout << "check" << endl;
     Pong::checkBallIsOnboard();
-    cout << "get" << endl;
-    GameBoard::setBoardField(ball.getBallVerticalPosition(),ball.getBallHorizontalPosition(),(char)BoardField::SNAKEBOARD);
-    cout << "set" << endl;
+    GameBoard::setBoardField(ball.getPosition(),(char)BoardField::SNAKEBOARD);
     ball.setBallPosition(ball.updateBallMovement(actualBallDirection));
-    cout << "setfield" << endl;
-    GameBoard::setBoardField(ball.getBallVerticalPosition(),ball.getBallHorizontalPosition(),(char)BoardField::BALL);
+    GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
     Pong::checkIsScore();
 }
 

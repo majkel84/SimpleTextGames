@@ -23,8 +23,6 @@ void Ball::setBallPosition(pair <short, short> position)
 
 pair <unsigned, unsigned> Ball::getPosition()
 {
-    cout << position.first;
-    cout << position.second;
     return position;
 }
 
