@@ -76,7 +76,7 @@ void Pong::showScore()
 
 void Pong::checkIsScore()
 {
-    if (ball.getBallHorizontalPosition() == 0)
+    if (ball.getBallHorizontalPosition() == 1)
     {
         Pong::updateScore(2);
         Pong::setBallStartPosition();
