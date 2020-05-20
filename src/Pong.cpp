@@ -79,17 +79,14 @@ void Pong::checkIsScore()
     if (ball.getBallHorizontalPosition() == 0)
     {
         Pong::updateScore(2);
-        //Pong::setBallStartPosition();
-        //actualBallDirection = UPRIGHT;
-        GameBoard::setBoardField(ball.getPosition(),(char)BoardField::SNAKEBOARD);
-        ball.setBallPosition(make_pair(15, 23));
-        GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
+        Pong::setBallStartPosition();
+        actualBallDirection = UPRIGHT;
     }
     else if (ball.getBallHorizontalPosition() == gameBoard[0].size())
     {
         Pong::updateScore(1);
-        //Pong::setBallStartPosition();
-        //actualBallDirection = UPLEFT;
+        Pong::setBallStartPosition();
+        actualBallDirection = UPLEFT;
     }
 }
 
@@ -133,10 +130,10 @@ bool Pong::checkIsPadleOnBoard(short move, short player)
 void Pong::moveBall()
 {
     Pong::checkBallIsOnboard();
+    Pong::checkIsScore();
     GameBoard::setBoardField(ball.getPosition(),(char)BoardField::SNAKEBOARD);
     ball.setBallPosition(ball.updateBallMovement(actualBallDirection));
     GameBoard::setBoardField(ball.getPosition(),(char)BoardField::BALL);
-    Pong::checkIsScore();
 }
 
 void Pong::checkBallIsOnboard()
