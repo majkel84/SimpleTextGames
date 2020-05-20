@@ -95,7 +95,7 @@ void Pong::checkIsScore()
 
 bool Pong::gameOver()
 {
-    return (score.first || score.second) >= 3 ? true : false;
+    return (score.first >= 3 || score.second >= 3);
 }
 
 void Pong::updatePadleMove(Direction direction)
